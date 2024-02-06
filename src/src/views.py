@@ -1,4 +1,8 @@
 from django.http import HttpResponse
 
-def home(request):
-    return HttpResponse("hell")
+def index(request):
+    ...
+
+
+def edit(request):
+    ...
