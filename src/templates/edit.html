@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+{% load static %}
+
+
 <html lang="en">
     <head>
         <title>Edit</title>
 
-        <link rel="stylesheet" href="/styles/editor.css">
+        <link rel="stylesheet" href="{% static 'styles/editor.css' %}">
 
-        <script defer src="/scripts/editor.js"></script>
+        <script defer src="{% static 'scripts/editor.js' %}"></script>
     </head>
     <body>
         <header></header>
