@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Attendance</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body {
+            font-size: 1.125rem;
+        }
+        header {
+    height: 3.5rem;
+    background: #264EA6;
+    box-shadow: 0 0 0.8rem 0rem #0008;
+    z-index: 1;
+    color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+:root, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #faf3ff;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 30em;
+    max-width: 90vw;
+    min-height: min-content;
+    background-color: #FfFfFf;
+    padding: 1em;
+    gap: 1em;
+    border-radius: 1em;
+    align-items: center;
+}
+label {
+    display: block;
+}
+label > input {
+    width: 100%;
+    font-size: 1.25rem;
+}
+input {
+    border: 1px solid #333;
+    border-bottom: 3px solid #264EA6;
+}
+input:focus {
+    border-color: #264EA6;
+}
+button {
+    font-size: 1.125rem;
+    width: max-content;
+    max-width: 100%;
+}
+label > span {
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: -0.05ch;
+}
+    </style>
+</head>
+
+<body>
+    <header>AutoEDU Attendance</header>
+    <main>
+        <form action="/api/submit-attendance" method="get">
+            <label>
+                <span>Clark Username</span>
+                <input type="text" name="username" autofocus autocomplete="off">
+            </label>
+            <button type="submit">Submit Attendance</button>
+        </form>
+    </main>
+</body>
+
+</html>
