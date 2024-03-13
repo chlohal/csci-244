@@ -42,12 +42,17 @@ if __name__ == '__main__':
         if item['name'] == 'Attendance':
             assign_id = item['id']
     
-    url = 'https://canvas.instructure.com/api/v1/courses'
-    print(url + f'/{course_id}/assignments/{assign_id}/submissions/{get_user_id("wil secord")}')
+    url = 'https://canvas.instructure.com/api/v1/courses/'
+    print(url + f'/{course_id}/gradebook/update_submission/{get_user_id("wil secord")}')
     # , data={'submission[posted_grade]': '100'}
-    grade = requests.get(url + f'/{course_id}/assignments/{assign_id}/submissions/{get_user_id("wil secord")}', headers=heads).json()['grade']
+    student_id = get_user_id("wil secord")
+    grade = requests.get(url + f'/{course_id}/assignments/{assign_id}/submissions/{student_id}', headers=heads).json()['grade']
     print(grade)
-    print(requests.post(url + f'/{course_id}/assignments/{assign_id}/submissions', data={'submission[user_id]': get_user_id("wil secord"),
-                                                                                         'submission[submission_type]': 'basic_lti_launch'}, headers=heads).json())
+
+    print(requests.post(url + f'/{course_id}/assignments/{assign_id}/submissions/update_grades', json={
+        "grade_data": {
+            student_id: { "posted_grade": 2 }
+        }
+        }, headers=heads).text)
     # print(requests.post(url + f'/{course_id}/assignments/{assign_id}/submissions/update_grades', data={f'grade_data[{get_user_id("wil secord")}]': '10'}, headers=heads))
 
