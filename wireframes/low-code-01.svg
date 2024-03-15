@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 507.99999 285.75"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4-dev (bf8274be86, 2023-11-17)"
+   sodipodi:docname="low-code-01.svg"
+   inkscape:export-filename=".//home/chlohal/Desktop/obsidian/2024-spring/classes/csci-244/project/project-repo/wireframes//home/chlohal/Desktop/obsidian/2024-spring/classes/csci-244/project/project-repo/wireframes//home/chlohal/Desktop/obsidian/2024-spring/classes/csci-244/project/project-repo/wireframes//home/chlohal/Desktop/obsidian/2024-spring/classes/csci-244/project/project-repo/wireframes//home/chlohal/Desktop/obsidian/2024-spring/classes/csci-244/project/project-repo/wireframes//home/chlohal/Desktop/obsidian/2024-spring/classes/csci-244/project/project-repo/wireframes//home/chlohal/Desktop/obsidian/2024-spring/classes/csci-244/project/project-repo/wireframes/low-code-01.png"
+   inkscape:export-xdpi="232.22856"
+   inkscape:export-ydpi="232.22856"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="0.79411772"
+     inkscape:cx="1213.2962"
+     inkscape:cy="557.22217"
+     inkscape:window-width="1920"
+     inkscape:window-height="1060"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient37"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#e9e6f8;stop-opacity:0;"
+         offset="0"
+         id="stop38" />
+      <stop
+         style="stop-color:#e9e6f8;stop-opacity:1;"
+         offset="0.66520405"
+         id="stop37" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient5"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#e9e6f8;stop-opacity:0;"
+         offset="0"
+         id="stop6" />
+      <stop
+         style="stop-color:#e9e6f8;stop-opacity:1;"
+         offset="0.85341823"
+         id="stop5" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5"
+       id="linearGradient6"
+       x1="394.17233"
+       y1="15.266058"
+       x2="401.41111"
+       y2="15.266058"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(5.9644238,0,0,1,-1992.7747,0)" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath36">
+      <rect
+         style="opacity:1;fill:#e9e6f8;fill-opacity:1;stroke:none;stroke-width:0.529169;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect36"
+         width="27.554626"
+         height="6.7567167"
+         x="310.83261"
+         y="119.12497"
+         rx="2.2271066"
+         ry="2.1891994" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient37"
+       id="linearGradient38"
+       x1="334.32352"
+       y1="122.50333"
+       x2="339.12361"
+       y2="122.50333"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2.4166666,0,0,1,-481.16152,0)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient37"
+       id="linearGradient40"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2.4166666,0,0,1,-481.16152,0)"
+       x1="334.32352"
+       y1="122.50333"
+       x2="339.12361"
+       y2="122.50333" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#fcfbfb;fill-opacity:1;stroke:none;stroke-width:2.64583;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect63"
+       width="373.06833"
+       height="255.46812"
+       x="134.93166"
+       y="30.281872"
+       sodipodi:insensitive="true" />
+    <rect
+       style="fill:#e9e6f8;stroke:none;stroke-width:0.499999;stroke-linejoin:round;paint-order:markers fill stroke;fill-opacity:1"
+       id="rect2"
+       width="294.82217"
+       height="14.477457"
+       x="106.58892"
+       y="8.0272417"
+       ry="7.2387285" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.6031px;line-height:1.25;font-family:sans-serif;text-align:start;text-anchor:start;fill:#1a1243;fill-opacity:1;stroke-width:0.264583"
+       x="112.2551"
+       y="18.191141"
+       id="text2"><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;fill:#1a1243;fill-opacity:1;stroke-width:0.264583"
+         x="112.2551"
+         y="18.191141"
+         id="tspan3">https://autoedu.com/make/a465cdf7a6b72a7d855ec6d</tspan></text>
+    <rect
+       style="fill:url(#linearGradient6);stroke:none;stroke-width:0.499999;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect4"
+       width="43.175163"
+       height="14.477283"
+       x="358.23596"
+       y="8.0274172"
+       ry="0" />
+    <path
+       id="rect1"
+       style="fill:#2e1f74;stroke:none;stroke-width:0.499999;stroke-linejoin:round;paint-order:markers fill stroke;fill-opacity:1"
+       d="M 0.25011393 0.25011393 L 0.25011393 30.281872 L 507.74988 30.281872 L 507.74988 0.25011393 L 0.25011393 0.25011393 z M 113.82768 8.0274169 L 394.17232 8.0274169 C 398.18257 8.0274169 401.41115 11.255479 401.41115 15.265735 C 401.41115 19.27599 398.18257 22.504569 394.17232 22.504569 L 113.82768 22.504569 C 109.81742 22.504569 106.58884 19.27599 106.58884 15.265735 C 106.58884 11.255479 109.81742 8.0274169 113.82768 8.0274169 z " />
+    <rect
+       style="fill:#f2edec;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect6"
+       width="134.68155"
+       height="255.46812"
+       x="0.25011393"
+       y="30.281872" />
+    <rect
+       style="fill:#2e1f74;fill-opacity:1;stroke:#2e1f74;stroke-width:0.499999;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke;font-variation-settings:normal;opacity:1;vector-effect:none;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       id="rect9"
+       width="31.96171"
+       height="63.867035"
+       x="0.25011393"
+       y="94.148911" />
+    <rect
+       style="fill:#efe9e8;fill-opacity:1;stroke:#2e1f74;stroke-width:0.499999;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke;font-variation-settings:normal;opacity:1;vector-effect:none;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       id="rect8"
+       width="31.96171"
+       height="63.867035"
+       x="0.25011393"
+       y="30.281872" />
+    <rect
+       style="fill:#efe9e8;fill-opacity:1;stroke:#2e1f74;stroke-width:0.499999;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke;font-variation-settings:normal;opacity:1;vector-effect:none;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       id="rect10"
+       width="31.96171"
+       height="63.867035"
+       x="0.25011393"
+       y="158.01595" />
+    <rect
+       style="fill:#efe9e8;fill-opacity:1;stroke:#2e1f74;stroke-width:0.499999;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect11"
+       width="31.96171"
+       height="63.867035"
+       x="0.25011393"
+       y="221.88297" />
+    <g
+       id="g28">
+      <rect
+         style="fill:#e9e6f8;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="rect7"
+         width="65.735054"
+         height="43.583076"
+         x="181.00099"
+         y="67.65081"
+         rx="6.2429409"
+         ry="6.2429409" />
+      <path
+         id="rect12"
+         style="font-variation-settings:normal;vector-effect:none;fill:#800080;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 187.24387,67.65065 c -3.45859,0 -6.24303,2.784441 -6.24303,6.24303 v 8.683708 h 65.735 V 73.89368 c 0,-3.458589 -2.78392,-6.24303 -6.24251,-6.24303 z" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.51061px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+         x="183.58878"
+         y="77.795303"
+         id="text13"><tspan
+           sodipodi:role="line"
+           id="tspan13"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+           x="183.58878"
+           y="77.795303">QR CODE SCAN</tspan></text>
+      <g
+         inkscape:label="QR Code: https://example.org"
+         transform="matrix(0.17027168,0,0,0.17027168,218.80359,85.667707)"
+         id="g16"
+         style="stroke-width:1.55388">
+        <rect
+           x="0"
+           y="0"
+           width="132"
+           height="132"
+           style="fill:#ffffff;stroke:none;stroke-width:2.55354"
+           id="rect15" />
+        <g
+           style="fill:#000000;stroke:none;stroke-width:2.55354"
+           id="g15">
+          <path
+             d="M 116,116 H 84 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v -4 h 8 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 8 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -8 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 8 h -4 v -8 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v -4 h 8 c 0,0 0,0 0,0 v -8 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v -8 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v -4 h 16 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -8 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 v 4 c 0,0 0,0 0,0 h 8 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 h 4 v 4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 h 4 v 8 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 8 c 0,0 0,0 0,0 h 4 v 4 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h 4 v 4 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 h 4 v 4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 h 4 c 0,0 0,0 0,0 z m -52,0 h -8 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 V 96 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 h 4 v 4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -8 c 0,0 0,0 0,0 v 8 c 0,0 0,0 0,0 h 8 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 8 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 z m -20,0 H 16 c 0,0 0,0 0,0 V 88 c 0,0 0,0 0,0 h 28 c 0,0 0,0 0,0 z m 68,-4 v -8 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 z m -36,0 h -4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 z m -36,0 V 92 c 0,0 0,0 0,0 H 20 c 0,0 0,0 0,0 v 20 c 0,0 0,0 0,0 z m -4,-4 H 24 c 0,0 0,0 0,0 V 96 c 0,0 0,0 0,0 h 12 c 0,0 0,0 0,0 z m 76,-12 h -4 v -4 c 0,0 0,0 0,0 h -4 v -4 h 12 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 z M 96,96 V 84 c 0,0 0,0 0,0 H 84 c 0,0 0,0 0,0 v 12 c 0,0 0,0 0,0 z m -4,-4 h -4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z m -32,0 h -4 v -8 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 8 h -4 c 0,0 0,0 0,0 v -8 c 0,0 0,0 0,0 h -8 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 h 4 c 0,0 0,0 0,0 v -8 h 4 c 0,0 0,0 0,0 v -4 h 8 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 h 12 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 8 h -4 c 0,0 0,0 0,0 z m 48,-8 h -4 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z M 36,84 H 24 c 0,0 0,0 0,0 V 72 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 12 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 V 68 c 0,0 0,0 0,0 h 8 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -8 h 4 v 12 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -8 c 0,0 0,0 0,0 h 4 v 4 c 0,0 0,0 0,0 h 8 v 4 h -8 c 0,0 0,0 0,0 v 4 H 28 c 0,0 0,0 0,0 v 8 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z m 80,-4 h -4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v -8 c 0,0 0,0 0,0 h -4 v -4 c 0,0 0,0 0,0 h 8 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 V 48 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v 8 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v 12 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z M 44,76 h -4 c 0,0 0,0 0,0 v -4 h 4 c 0,0 0,0 0,0 z m 40,-4 h -4 v -4 h 4 z m 16,-4 h -4 v -4 h 4 c 0,0 0,0 0,0 z m -8,0 h -8 v -4 h 4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 V 48 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v 16 h -4 c 0,0 0,0 0,0 z m -12,0 h -8 c 0,0 0,0 0,0 v -4 h 4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v -8 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v -4 h 8 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h 12 v 8 h -4 c 0,0 0,0 0,0 z M 52,64 h -4 v -8 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z m 52,-4 h -4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z m -44,0 h -4 c 0,0 0,0 0,0 v -8 h 4 z m -16,0 h -4 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z m 44,-4 h -4 v -8 h 4 c 0,0 0,0 0,0 z m -52,0 h -4 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 H 16 c 0,0 0,0 0,0 v -8 c 0,0 0,0 0,0 h 20 c 0,0 0,0 0,0 z m 68,-4 h -4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z m -40,0 h -4 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 H 40 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 12 c 0,0 0,0 0,0 v -4 h 4 c 0,0 0,0 0,0 v -4 h 4 v 4 c 0,0 0,0 0,0 h 4 z m 20,-4 h -4 c 0,0 0,0 0,0 v -8 h 4 c 0,0 0,0 0,0 z m -8,0 h -4 c 0,0 0,0 0,0 v -8 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -4 v -4 c 0,0 0,0 0,0 h -4 v -4 c 0,0 0,0 0,0 h 20 v 4 h -4 c 0,0 0,0 0,0 z m 40,-4 H 88 c 0,0 0,0 0,0 V 16 c 0,0 0,0 0,0 h 28 c 0,0 0,0 0,0 z m -64,0 h -4 c 0,0 0,0 0,0 v -8 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 12 c 0,0 0,0 0,0 v 4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v 8 h -4 c 0,0 0,0 0,0 z m -8,0 H 16 c 0,0 0,0 0,0 V 16 c 0,0 0,0 0,0 h 28 c 0,0 0,0 0,0 z m 68,-4 V 20 c 0,0 0,0 0,0 H 92 c 0,0 0,0 0,0 v 20 c 0,0 0,0 0,0 z M 40,40 V 20 c 0,0 0,0 0,0 H 20 c 0,0 0,0 0,0 v 20 c 0,0 0,0 0,0 z m 68,-4 H 96 c 0,0 0,0 0,0 V 24 c 0,0 0,0 0,0 h 12 c 0,0 0,0 0,0 z m -24,0 h -4 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z M 36,36 H 24 c 0,0 0,0 0,0 V 24 c 0,0 0,0 0,0 h 12 c 0,0 0,0 0,0 z M 76,32 H 64 c 0,0 0,0 0,0 v -8 c 0,0 0,0 0,0 h 4 v 4 c 0,0 0,0 0,0 h 8 c 0,0 0,0 0,0 z m 8,-4 h -4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h -4 c 0,0 0,0 0,0 v -4 h 4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z M 72,24 h -4 v -4 h 4 z m -12,0 h -4 c 0,0 0,0 0,0 v -8 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z m -8,0 h -4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z m 24,-4 h -4 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z m -8,0 h -4 c 0,0 0,0 0,0 v -4 c 0,0 0,0 0,0 h 4 c 0,0 0,0 0,0 z"
+             id="path15"
+             style="stroke-width:1.55388" />
+        </g>
+      </g>
+      <g
+         id="g21"
+         transform="translate(0,-4.1349003)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:4.27174px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+           x="189.6149"
+           y="106.3445"
+           id="text17"><tspan
+             sodipodi:role="line"
+             id="tspan17"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+             x="189.6149"
+             y="106.3445">DOWNLOAD</tspan></text>
+        <g
+           id="g20"
+           transform="matrix(0.50420931,0,0,0.50420931,98.967461,50.215823)"
+           style="stroke-width:1.9833">
+          <rect
+             style="opacity:1;vector-effect:none;fill:#202020;fill-opacity:1;stroke:none;stroke-width:0.99165;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+             id="rect17"
+             width="20.443405"
+             height="1.9465679"
+             x="189.39371"
+             y="99.337753"
+             rx="0" />
+          <path
+             id="rect18"
+             style="opacity:1;vector-effect:none;fill:#202020;fill-opacity:1;stroke:none;stroke-width:0.99165;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+             d="m -83.915807,198.64214 h -9.712069 v -4.03645 l -5.009513,5.00951 5.009513,5.01003 v -4.03644 h 9.712069 z"
+             transform="rotate(-90)" />
+        </g>
+      </g>
+      <circle
+         style="vector-effect:none;fill:#00a9a9;fill-opacity:1;stroke:#e9e6f8;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         id="path21"
+         cx="246.73605"
+         cy="89.442345"
+         r="2.0698924" />
+    </g>
+    <g
+       id="g42"
+       transform="translate(24.803959,56.5592)">
+      <rect
+         style="fill:#e9e6f8;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="rect21"
+         width="65.735046"
+         height="37.437927"
+         x="273.4567"
+         y="111.08667"
+         rx="6.2429409"
+         ry="6.2429409" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-size:4.27174px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+         x="310.19528"
+         y="134.37778"
+         id="text17-7"><tspan
+           sodipodi:role="line"
+           id="tspan17-8"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+           x="310.19528"
+           y="134.37778">Successful Login</tspan></text>
+      <path
+         id="path22"
+         style="font-variation-settings:normal;vector-effect:none;fill:#930000;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 279.69957,111.08651 c -3.45859,0 -6.24303,2.78444 -6.24303,6.24304 v 8.6837 h 65.73501 v -8.6837 c 0,-3.4586 -2.78393,-6.24304 -6.24251,-6.24304 z" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.51061px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+         x="276.04449"
+         y="121.23116"
+         id="text22"><tspan
+           sodipodi:role="line"
+           id="tspan22"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+           x="276.04449"
+           y="121.23116">CLARK LOGIN</tspan></text>
+      <circle
+         style="vector-effect:none;fill:#45a900;fill-opacity:1;stroke:#e9e6f8;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         id="circle26"
+         cx="339.19156"
+         cy="133.21587"
+         r="2.0698924" />
+      <circle
+         style="vector-effect:none;fill:#00a9a9;fill-opacity:1;stroke:#e9e6f8;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         id="circle27"
+         cx="273.45654"
+         cy="133.21587"
+         r="2.0698924" />
+      <circle
+         style="vector-effect:none;fill:#00a9a9;fill-opacity:1;stroke:#e9e6f8;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         id="circle28"
+         cx="339.19156"
+         cy="140.33968"
+         r="2.0698924" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-size:4.27174px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+         x="275.63547"
+         y="134.37778"
+         id="text28"><tspan
+           sodipodi:role="line"
+           id="tspan28"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+           x="275.63547"
+           y="134.37778">User</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-size:4.27174px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+         x="317.79382"
+         y="141.48878"
+         id="text29"><tspan
+           sodipodi:role="line"
+           id="tspan29"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+           x="317.79382"
+           y="141.48878">Failed Login</tspan></text>
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#00a9a9;stroke-width:1.32292;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 247.68161,91.283605 49.63334,96.650205"
+       id="path27"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="100"
+       inkscape:connection-start="#path21"
+       inkscape:connection-end="#circle27" />
+    <g
+       id="g41"
+       transform="translate(2.9688393,-18.243889)">
+      <rect
+         style="fill:#e9e6f8;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="rect29"
+         width="65.735046"
+         height="55.031075"
+         x="402.53439"
+         y="80.380882"
+         rx="6.2429409"
+         ry="6.2429409" />
+      <path
+         id="path30"
+         style="font-variation-settings:normal;vector-effect:none;fill:#730e37;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 408.77728,80.380728 c -3.45859,0 -6.24303,2.784441 -6.24303,6.243034 v 8.6837 h 65.735 v -8.6837 c 0,-3.458593 -2.78392,-6.243034 -6.24251,-6.243034 z" />
+      <path
+         id="path1"
+         class="st0"
+         d="m 461.2267,84.224096 c -0.34862,0 -0.69724,0.0438 -1.03734,0.131384 0.0637,0.525499 0.50957,0.919064 1.03734,0.919064 0.52777,0 0.97365,-0.393565 1.03734,-0.919064 -0.3401,-0.08758 -0.68871,-0.131384 -1.03734,-0.131384 z m 1.73118,0.413479 c -0.32303,0.416305 -0.28662,1.007758 0.0865,1.38084 0.37308,0.373081 0.96681,0.409497 1.38084,0.08646 -0.35716,-0.60512 -0.86219,-1.110146 -1.46731,-1.467303 z m -3.45782,0.0046 c -0.60512,0.357158 -1.11016,0.862183 -1.46731,1.467303 0.41403,0.323034 1.0078,0.286618 1.38089,-0.08646 0.37307,-0.373082 0.40944,-0.964535 0.0864,-1.38084 z m 1.72664,0.912221 c -0.18199,0 -0.32759,0.147877 -0.32759,0.327593 0,0.181992 0.14788,0.327593 0.32759,0.327593 0.17971,0 0.32759,-0.147876 0.32759,-0.327593 0,-0.179716 -0.1456,-0.327593 -0.32759,-0.327593 z m 1.38769,0.567879 c -0.0842,-2.84e-4 -0.16833,0.03158 -0.23202,0.09642 -0.1274,0.127393 -0.12968,0.336648 0,0.464041 0.12738,0.127394 0.33668,0.127394 0.46408,0 0.1274,-0.127393 0.12967,-0.336648 0,-0.464041 -0.0637,-0.0637 -0.1479,-0.09613 -0.23206,-0.09642 z m -2.7708,0.0031 c -0.0842,0 -0.16837,0.03187 -0.23206,0.09557 -0.12739,0.127393 -0.12739,0.336692 0,0.464086 0.12739,0.127394 0.3367,0.127394 0.46409,0 0.12739,-0.127394 0.12739,-0.336693 0,-0.464086 -0.0637,-0.0637 -0.14785,-0.09557 -0.23203,-0.09557 z m -2.09747,0.673403 c -0.17516,0.680191 -0.17516,1.394488 0,2.07468 0.52551,-0.0637 0.91907,-0.507291 0.91907,-1.03734 0,-0.527774 -0.39356,-0.973644 -0.91907,-1.03734 z m 6.97711,0 c -0.5255,0.06597 -0.91906,0.509566 -0.91906,1.03734 0,0.527774 0.39356,0.973643 0.91906,1.03734 0.17516,-0.680192 0.17516,-1.394489 0,-2.07468 z m -5.45067,0.709747 c -0.18199,0 -0.32986,0.145602 -0.32986,0.327593 0,0.181991 0.1456,0.329858 0.32759,0.329858 0.18199,0 0.32987,-0.145602 0.32987,-0.327593 v -0.0023 c 0.002,-0.179717 -0.1456,-0.327593 -0.3276,-0.327593 z m 3.92192,0 c -0.18199,-0.0023 -0.32985,0.143335 -0.33213,0.325326 -0.002,0.181992 0.14334,0.329851 0.32533,0.332125 0.18199,0.0023 0.32985,-0.143335 0.33212,-0.325326 v -0.0046 c 0,-0.179716 -0.1456,-0.325318 -0.32532,-0.327593 z m -3.35231,1.385416 c -0.0839,0 -0.16807,0.03183 -0.23291,0.09553 -0.12739,0.127394 -0.12739,0.336693 0,0.464086 0.1274,0.127395 0.33669,0.127395 0.46409,0 0.1274,-0.127393 0.1274,-0.336692 0,-0.464086 -0.0637,-0.0637 -0.1473,-0.09553 -0.23118,-0.09553 z m 2.77448,0.0046 c -0.0842,0 -0.16832,0.03187 -0.23203,0.09557 -0.12739,0.127394 -0.12739,0.336649 0,0.464042 0.1274,0.127393 0.3367,0.127393 0.46409,0 0.1274,-0.127393 0.1274,-0.336648 0,-0.464042 -0.0637,-0.0637 -0.14789,-0.09557 -0.23206,-0.09557 z m -3.92579,0.449158 c -0.23158,-0.0042 -0.46523,0.06825 -0.66038,0.219669 0.35716,0.60512 0.85992,1.110145 1.46504,1.467303 0.32303,-0.416304 0.28893,-1.007757 -0.0842,-1.380841 -0.19819,-0.198199 -0.45803,-0.301385 -0.7205,-0.306131 z m 5.0775,0.004 c -0.26307,0.0048 -0.52355,0.107454 -0.72175,0.304445 -0.37308,0.373081 -0.40946,0.964534 -0.0841,1.380839 0.60512,-0.357157 1.11014,-0.862183 1.46731,-1.467303 -0.19515,-0.150356 -0.4293,-0.222235 -0.66141,-0.217981 z m -2.54166,0.126986 c -0.18199,0 -0.32986,0.145601 -0.32986,0.327592 0,0.181991 0.1456,0.329859 0.3276,0.329859 0.18199,0 0.32985,-0.145602 0.32985,-0.327593 v -0.0023 c 0,-0.179717 -0.1456,-0.327593 -0.32759,-0.327593 z m 0,0.93497 c -0.52777,0 -0.97365,0.393564 -1.03734,0.919063 0.68019,0.175167 1.39449,0.175167 2.07468,0 -0.0637,-0.525499 -0.50957,-0.919063 -1.03734,-0.919063 z"
+         style="fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.51061px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+         x="405.12219"
+         y="90.525375"
+         id="text31"><tspan
+           sodipodi:role="line"
+           id="tspan31"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+           x="405.12219"
+           y="90.525375">ATTENDANCE</tspan></text>
+      <circle
+         style="vector-effect:none;fill:#45a900;fill-opacity:1;stroke:#e9e6f8;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         id="circle32"
+         cx="402.53424"
+         cy="102.51007"
+         r="2.0698924" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-size:4.27174px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+         x="404.71317"
+         y="103.67198"
+         id="text33"><tspan
+           sodipodi:role="line"
+           id="tspan33"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+           x="404.71317"
+           y="103.67198">Student</tspan></text>
+      <g
+         id="g38"
+         transform="translate(112.9216,-15.128598)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.75664px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium';text-align:start;letter-spacing:0px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+           x="312.569"
+           y="118.6228"
+           id="text34"><tspan
+             sodipodi:role="line"
+             id="tspan34"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+             x="312.569"
+             y="118.6228">SECTION</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-size:4.27174px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+           x="311.83026"
+           y="124.02834"
+           id="text35"
+           clip-path="url(#clipPath36)"><tspan
+             sodipodi:role="line"
+             id="tspan35"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+             x="311.83026"
+             y="124.02834">CSCI-120-01-S24</tspan></text>
+        <rect
+           style="opacity:1;fill:url(#linearGradient38);stroke:none;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+           id="rect37"
+           width="11.600227"
+           height="7.2858839"
+           x="326.78702"
+           y="118.86039"
+           rx="2.2489583"
+           ry="2.2489583" />
+        <rect
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#303030;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+           id="rect34"
+           width="27.554626"
+           height="6.7567167"
+           x="310.83261"
+           y="119.12497"
+           rx="2.2489583"
+           ry="2.2489583" />
+        <path
+           id="rect38"
+           style="opacity:1;stroke-width:0.529167;stroke-linejoin:round;paint-order:markers fill stroke"
+           d="m 337.51923,121.91799 -1.15573,1.15573 -1.14439,-1.14441 z"
+           sodipodi:nodetypes="cccc" />
+      </g>
+      <g
+         id="g40"
+         transform="translate(112.9216,-2.187256)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.75664px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium';text-align:start;letter-spacing:0px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+           x="312.569"
+           y="118.6228"
+           id="text38"><tspan
+             sodipodi:role="line"
+             id="tspan38"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold';text-align:start;letter-spacing:0px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+             x="312.569"
+             y="118.6228">MARK AS</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-size:4.27174px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+           x="311.83026"
+           y="124.02834"
+           id="text39"
+           clip-path="url(#clipPath36)"><tspan
+             sodipodi:role="line"
+             id="tspan39"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Medium Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#202020;fill-opacity:1;stroke-width:0.264582"
+             x="311.83026"
+             y="124.02834">Present</tspan></text>
+        <rect
+           style="opacity:1;fill:url(#linearGradient40);stroke:none;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+           id="rect39"
+           width="11.600227"
+           height="7.2858839"
+           x="326.78702"
+           y="118.86039"
+           rx="2.2489583"
+           ry="2.2489583" />
+        <rect
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#303030;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+           id="rect40"
+           width="27.554626"
+           height="6.7567167"
+           x="310.83261"
+           y="119.12497"
+           rx="2.2489583"
+           ry="2.2489583" />
+        <path
+           id="path40"
+           style="opacity:1;stroke-width:0.529167;stroke-linejoin:round;paint-order:markers fill stroke"
+           d="m 337.51923,121.91799 -1.15573,1.15573 -1.14439,-1.14441 z"
+           sodipodi:nodetypes="cccc" />
+      </g>
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#45a900;stroke-width:1.32292;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 364.75328,187.84891 404.74532,86.192343"
+       id="path41"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#circle26"
+       inkscape:connection-end="#circle32" />
+    <g
+       id="g43"
+       transform="translate(-7.9012337e-7,11.252302)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:4.27174px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#2e1f74;fill-opacity:1;stroke-width:0.264582"
+         x="9.5606709"
+         y="63.746807"
+         id="text17-3"><tspan
+           sodipodi:role="line"
+           id="tspan17-3"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#2e1f74;fill-opacity:1;stroke-width:0.264582"
+           x="9.5606709"
+           y="63.746807">CANVAS</tspan></text>
+      <path
+         id="path1-9"
+         class="st0"
+         d="m 16.208618,38.132379 c -0.977077,0 -1.954153,0.122759 -2.907351,0.36823 0.178532,1.472816 1.428171,2.57586 2.907351,2.57586 1.479181,0 2.728848,-1.103044 2.907352,-2.57586 -0.953198,-0.24546 -1.930247,-0.36823 -2.907352,-0.36823 z m 4.851976,1.158857 c -0.905356,1.166778 -0.803309,2.824442 0.242434,3.870079 1.04563,1.045634 2.709677,1.147697 3.870078,0.242321 -1.001012,-1.695969 -2.416459,-3.111404 -4.112428,-4.112408 z m -9.691227,0.01289 c -1.6959695,1.001006 -3.1114444,2.416439 -4.1124282,4.112408 1.1604013,0.905367 2.8245602,0.803304 3.8702182,-0.242321 1.045603,-1.045637 1.147537,-2.703301 0.242154,-3.870079 z m 4.839251,2.55668 c -0.510063,0 -0.918136,0.414455 -0.918136,0.918145 0,0.510069 0.414463,0.918144 0.918136,0.918144 0.503673,0 0.918136,-0.414451 0.918136,-0.918144 0,-0.50369 -0.408073,-0.918145 -0.918136,-0.918145 z m 3.889277,1.591594 c -0.235987,-7.96e-4 -0.471778,0.08851 -0.650282,0.270236 -0.357064,0.357045 -0.363454,0.943523 0,1.300568 0.357008,0.357047 0.943613,0.357047 1.300676,0 0.357064,-0.357045 0.363426,-0.943523 0,-1.300568 C 20.569758,43.544105 20.33377,43.453213 20.097895,43.4524 Z m -7.765717,0.0087 c -0.235988,0 -0.471891,0.08932 -0.650395,0.267853 -0.357035,0.357045 -0.357035,0.943647 0,1.300694 0.357036,0.357047 0.943669,0.357047 1.300705,0 0.357036,-0.357047 0.357036,-0.943649 0,-1.300694 C 12.803956,43.550422 12.568109,43.4611 12.332178,43.4611 Z m -5.8785768,1.887345 c -0.4909207,1.906371 -0.4909207,3.90833 0,5.814703 1.4728462,-0.178532 2.5758763,-1.421784 2.5758763,-2.907351 0,-1.479192 -1.1030301,-2.728831 -2.5758763,-2.907352 z m 19.5547368,0 c -1.472818,0.184894 -2.575848,1.42816 -2.575848,2.907352 0,1.479191 1.10303,2.728828 2.575848,2.907351 0.490921,-1.906373 0.490921,-3.908332 0,-5.814703 z m -15.276585,1.989207 c -0.510064,0 -0.9244986,0.408079 -0.9244986,0.918145 0,0.510066 0.4080726,0.924492 0.9181366,0.924492 0.510063,0 0.924526,-0.408078 0.924526,-0.918144 v -0.0064 C 11.655517,47.752052 11.241844,47.3376 10.731753,47.3376 Z m 10.99196,0 c -0.510063,-0.0064 -0.92447,0.401725 -0.930861,0.911791 -0.0056,0.510069 0.401739,0.924473 0.911802,0.930846 0.510063,0.0064 0.924471,-0.401724 0.930833,-0.91179 v -0.01289 c 0,-0.50369 -0.408073,-0.911768 -0.911774,-0.918144 z m -9.395515,3.882904 c -0.235147,0 -0.47105,0.08921 -0.652777,0.267742 -0.357036,0.357047 -0.357036,0.943649 0,1.300693 0.357064,0.35705 0.943641,0.35705 1.300705,0 0.357064,-0.357044 0.357064,-0.943646 0,-1.300693 -0.178532,-0.178532 -0.412838,-0.267742 -0.647928,-0.267742 z m 7.776031,0.01289 c -0.235987,0 -0.47175,0.08932 -0.65031,0.267854 -0.357036,0.357047 -0.357036,0.943526 0,1.30057 0.357064,0.357044 0.943669,0.357044 1.300705,0 0.357063,-0.357044 0.357063,-0.943523 0,-1.30057 -0.178532,-0.178532 -0.414492,-0.267854 -0.650395,-0.267854 z M 9.1014228,52.492295 c -0.649049,-0.01177 -1.3038995,0.191284 -1.8508462,0.615666 1.0010119,1.695969 2.4100967,3.111402 4.1060654,4.112408 0.905356,-1.166775 0.809784,-2.824439 -0.235987,-3.870081 -0.555467,-0.555492 -1.28372,-0.844692 -2.0193443,-0.857993 z m 14.2307022,0.01121 c -0.737306,0.01345 -1.467352,0.301161 -2.022847,0.853267 -1.045631,1.045634 -1.147593,2.703298 -0.235707,3.870076 1.695969,-1.001004 3.111388,-2.416439 4.112428,-4.112408 -0.546947,-0.421403 -1.203199,-0.622858 -1.853733,-0.610935 z m -7.123507,0.355903 c -0.510063,0 -0.924498,0.408076 -0.924498,0.918142 0,0.510066 0.408073,0.924495 0.918164,0.924495 0.510063,0 0.92447,-0.408078 0.92447,-0.918144 v -0.0064 c 0,-0.503693 -0.408073,-0.918145 -0.918136,-0.918145 z m 0,2.620439 c -1.47918,0 -2.728847,1.103042 -2.907351,2.575857 1.906367,0.49094 3.908335,0.49094 5.814703,0 -0.178532,-1.472815 -1.428171,-2.575857 -2.907352,-2.575857 z"
+         style="fill:#2e1f74;fill-opacity:1;stroke-width:0.264584" />
+    </g>
+    <g
+       id="g45"
+       style="fill:#efe9e8;fill-opacity:1">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:4.27174px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#efe9e8;fill-opacity:1;stroke-width:0.264582"
+         x="10.804167"
+         y="138.86615"
+         id="text43"><tspan
+           sodipodi:role="line"
+           id="tspan43"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#efe9e8;fill-opacity:1;stroke-width:0.264582"
+           x="10.804167"
+           y="138.86615">USERS</tspan></text>
+      <path
+         id="path44"
+         style="opacity:1;fill:#efe9e8;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+         d="m 16.230686,113.26355 a 4.2860044,4.2860044 0 0 0 -4.285849,4.28585 4.2860044,4.2860044 0 0 0 4.285849,4.28586 4.2860044,4.2860044 0 0 0 4.286425,-4.28586 4.2860044,4.2860044 0 0 0 -4.286425,-4.28585 z m 0,10.30114 a 9.9783799,9.9783799 0 0 0 -9.9779997,9.97856 H 26.209251 a 9.9783799,9.9783799 0 0 0 -9.978565,-9.97856 z" />
+    </g>
+    <g
+       id="g52">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:4.27174px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#2e1f74;fill-opacity:1;stroke-width:0.264582"
+         x="11.325322"
+         y="202.72726"
+         id="text45"><tspan
+           sodipodi:role="line"
+           id="tspan45"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#2e1f74;fill-opacity:1;stroke-width:0.264582"
+           x="11.325322"
+           y="202.72726">LOGIC</tspan></text>
+      <path
+         id="path49"
+         d="m 5.6820006,180.73606 v 2.64635 h 3.7424067 c 1.0255687,0 1.8277957,0.80222 1.8277957,1.8278 -2e-6,2.45548 2.019175,4.47466 4.474662,4.47466 1.025574,0 1.828313,0.80274 1.828312,1.82831 -3e-6,2.4555 2.019181,4.47466 4.474662,4.47466 h 4.750098 v -2.64635 h -4.750098 c -1.025574,0 -1.828313,-0.80272 -1.828312,-1.82831 1e-6,-0.64995 -0.14278,-1.26886 -0.396358,-1.82831 h 6.532934 v -2.64635 H 15.726865 c -1.025571,0 -1.827797,-0.80274 -1.827796,-1.82831 10e-7,-0.65038 -0.145048,-1.26805 -0.398942,-1.8278 h 12.837976 v -2.64635 H 9.4244073 Z"
+         style="fill:#2e1f74;fill-opacity:1" />
+    </g>
+    <g
+       id="g55"
+       transform="translate(-1.2762337e-7,1.1322852)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:4.27174px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#2e1f74;fill-opacity:1;stroke-width:0.264582"
+         x="4.3188467"
+         y="262.67191"
+         id="text52"><tspan
+           sodipodi:role="line"
+           id="tspan52"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;letter-spacing:-0.0974036px;text-anchor:start;fill:#2e1f74;fill-opacity:1;stroke-width:0.264582"
+           x="4.3188467"
+           y="262.67191">INTEGRATIONS</tspan></text>
+      <path
+         id="path53"
+         d="m 4.0571842,242.6495 -1.3226401,2.29162 10.0106489,5.77965 7.035105,-1.88505 3.9854,2.30097 1.323139,-2.29175 -4.934755,-2.84908 -7.035105,1.88505 z m 4.6384219,7.43153 -1.3216786,2.28922 4.9333925,2.84998 7.034606,-1.88491 9.061794,5.23141 1.323674,-2.28976 -10.011283,-5.78002 -7.035104,1.88505 z"
+         style="fill:#2e1f74;fill-opacity:1"
+         sodipodi:nodetypes="cccccccccccccccccc" />
+    </g>
+    <g
+       id="g56"
+       transform="translate(-97.258579,-93.549417)">
+      <path
+         id="rect12-4"
+         style="font-variation-settings:normal;vector-effect:none;fill:#800080;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 144.35553,128.32292 c -3.45859,0 -6.24303,2.78445 -6.24303,6.24303 v 2.44067 c 0,3.45858 2.78444,6.24303 6.24303,6.24303 h 42.13696 c 3.45859,0 6.24251,-2.78445 6.24251,-6.24303 v -2.44067 c 0,-3.45858 -2.78392,-6.24303 -6.24251,-6.24303 z"
+         sodipodi:nodetypes="sssssssss" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.51061px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+         x="140.70044"
+         y="138.46758"
+         id="text13-8"><tspan
+           sodipodi:role="line"
+           id="tspan13-8"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+           x="140.70044"
+           y="138.46758">QR CODE SCAN</tspan></text>
+    </g>
+    <g
+       id="g57"
+       transform="translate(-97.258579,-74.131056)">
+      <path
+         id="path57"
+         style="font-variation-settings:normal;vector-effect:none;fill:#800080;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 144.35553,128.32292 c -3.45859,0 -6.24303,2.78445 -6.24303,6.24303 v 2.44067 c 0,3.45858 2.78444,6.24303 6.24303,6.24303 h 39.49113 c 3.45859,0 6.24251,-2.78445 6.24251,-6.24303 v -2.44067 c 0,-3.45858 -2.78392,-6.24303 -6.24251,-6.24303 z"
+         sodipodi:nodetypes="sssssssss" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.51061px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+         x="140.70044"
+         y="138.46758"
+         id="text57"><tspan
+           sodipodi:role="line"
+           id="tspan57"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+           x="140.70044"
+           y="138.46758">WEBSITE VISIT</tspan></text>
+    </g>
+    <g
+       id="g58"
+       transform="translate(-97.258579,-53.208897)">
+      <path
+         id="path58"
+         style="font-variation-settings:normal;vector-effect:none;fill:#800080;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 144.35553,128.32292 c -3.45859,0 -6.24303,2.78445 -6.24303,6.24303 v 2.44067 c 0,3.45858 2.78444,6.24303 6.24303,6.24303 h 39.49113 c 3.45859,0 6.24251,-2.78445 6.24251,-6.24303 v -2.44067 c 0,-3.45858 -2.78392,-6.24303 -6.24251,-6.24303 z"
+         sodipodi:nodetypes="sssssssss" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.51061px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+         x="140.70044"
+         y="138.46758"
+         id="text58"><tspan
+           sodipodi:role="line"
+           id="tspan58"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+           x="140.70044"
+           y="138.46758">PDF UPLOAD</tspan></text>
+    </g>
+    <g
+       id="g59"
+       transform="translate(-97.258579,-33.529698)">
+      <path
+         id="path59"
+         style="font-variation-settings:normal;vector-effect:none;fill:#800080;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 144.35553,128.32292 c -3.45859,0 -6.24303,2.78445 -6.24303,6.24303 v 2.44067 c 0,3.45858 2.78444,6.24303 6.24303,6.24303 h 65.4203 c 3.45859,0 6.24251,-2.78445 6.24251,-6.24303 v -2.44067 c 0,-3.45858 -2.78392,-6.24303 -6.24251,-6.24303 z"
+         sodipodi:nodetypes="sssssssss" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.51061px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+         x="140.70044"
+         y="138.46758"
+         id="text59"><tspan
+           sodipodi:role="line"
+           id="tspan59"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+           x="140.70044"
+           y="138.46758">BROWSER ADDON CLICK</tspan></text>
+    </g>
+    <g
+       id="g60"
+       transform="translate(-97.258579,5.22033)">
+      <path
+         id="path60"
+         style="font-variation-settings:normal;vector-effect:none;fill:#800080;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 144.35553,128.32292 c -3.45859,0 -6.24303,2.78445 -6.24303,6.24303 v 2.44067 c 0,3.45858 2.78444,6.24303 6.24303,6.24303 H 191.255 c 3.45859,0 6.24251,-2.78445 6.24251,-6.24303 v -2.44067 c 0,-3.45858 -2.78392,-6.24303 -6.24251,-6.24303 z"
+         sodipodi:nodetypes="sssssssss" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.51061px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+         x="140.70044"
+         y="138.46758"
+         id="text60"><tspan
+           sodipodi:role="line"
+           id="tspan60"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+           x="140.70044"
+           y="138.46758">CHECK GPS AREA</tspan></text>
+    </g>
+    <g
+       id="g61"
+       transform="translate(-97.258579,26.490021)">
+      <path
+         id="path61"
+         style="font-variation-settings:normal;vector-effect:none;fill:#800080;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 144.35553,128.32292 c -3.45859,0 -6.24303,2.78445 -6.24303,6.24303 v 2.44067 c 0,3.45858 2.78444,6.24303 6.24303,6.24303 h 54.3078 c 3.45859,0 6.24251,-2.78445 6.24251,-6.24303 v -2.44067 c 0,-3.45858 -2.78392,-6.24303 -6.24251,-6.24303 z"
+         sodipodi:nodetypes="sssssssss" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.51061px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+         x="140.70044"
+         y="138.46758"
+         id="text61"><tspan
+           sodipodi:role="line"
+           id="tspan61"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+           x="140.70044"
+           y="138.46758">CHECK USER DEVICE</tspan></text>
+    </g>
+    <g
+       id="g62"
+       transform="translate(-97.258579,47.759712)">
+      <path
+         id="path62"
+         style="font-variation-settings:normal;vector-effect:none;fill:#800080;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 144.35553,128.32292 c -3.45859,0 -6.24303,2.78445 -6.24303,6.24303 v 2.44067 c 0,3.45858 2.78444,6.24303 6.24303,6.24303 h 31.55364 c 3.45859,0 6.24251,-2.78445 6.24251,-6.24303 v -2.44067 c 0,-3.45858 -2.78392,-6.24303 -6.24251,-6.24303 z"
+         sodipodi:nodetypes="sssssssss" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.51061px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+         x="140.70044"
+         y="138.46758"
+         id="text62"><tspan
+           sodipodi:role="line"
+           id="tspan62"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+           x="140.70044"
+           y="138.46758">CHECK TIME</tspan></text>
+    </g>
+    <g
+       id="g63"
+       transform="translate(-97.258579,69.029403)">
+      <path
+         id="path63"
+         style="font-variation-settings:normal;vector-effect:none;fill:#800080;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="m 144.35553,128.32292 c -3.45859,0 -6.24303,2.78445 -6.24303,6.24303 v 2.44067 c 0,3.45858 2.78444,6.24303 6.24303,6.24303 h 47.42864 c 3.45859,0 6.24251,-2.78445 6.24251,-6.24303 v -2.44067 c 0,-3.45858 -2.78392,-6.24303 -6.24251,-6.24303 z"
+         sodipodi:nodetypes="sssssssss" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.51061px;line-height:1.25;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+         x="140.70044"
+         y="138.46758"
+         id="text63"><tspan
+           sodipodi:role="line"
+           id="tspan63"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold Condensed';text-align:start;text-anchor:start;fill:#f9f9f9;fill-opacity:1;stroke-width:0.264584"
+           x="140.70044"
+           y="138.46758">CHECK PRESENCE</tspan></text>
+    </g>
+  </g>
+</svg>
