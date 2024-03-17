@@ -8,6 +8,7 @@ def get_user_id(usr):
     course_id = requests.get(url, headers=heads).json()[0]['id']
     users = requests.get(url + f'/{course_id}/users', headers=heads).json()
     for user in users:
+        print(user)
         if usr.lower() == user['name'].lower():
             return user['id']
 
@@ -47,12 +48,9 @@ if __name__ == '__main__':
     # , data={'submission[posted_grade]': '100'}
     student_id = get_user_id("wil secord")
     grade = requests.get(url + f'/{course_id}/assignments/{assign_id}/submissions/{student_id}', headers=heads).json()['grade']
-    print(grade)
 
     print(requests.post(url + f'/{course_id}/assignments/{assign_id}/submissions/update_grades', json={
         "grade_data": {
             student_id: { "posted_grade": 2 }
         }
         }, headers=heads).text)
-    # print(requests.post(url + f'/{course_id}/assignments/{assign_id}/submissions/update_grades', data={f'grade_data[{get_user_id("wil secord")}]': '10'}, headers=heads))
-

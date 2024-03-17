@@ -35,6 +35,7 @@ main aside nav {
     width: 6rem;
     background-color: #0F0326;
     color: #F5EFFA;
+    flex-shrink: 0;
 }
 
 ul.catpicker {
@@ -64,4 +65,55 @@ ul.catpicker li button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.main-edit-canvas {
+    flex-grow: 1;
+    position: relative;
+}
+
+.main-edit-canvas > div {
+    height: 100%;
+    width: 100%;
+}
+
+.main-edit-canvas > div,
+.main-edit-canvas > div > div {
+    position: absolute;
+}
+
+.block-select {
+    flex-grow: 1;
+}
+
+.block-select div {
+    padding: 1em;
+    
+}
+
+.block-select div button, .block-parent h3 {
+    margin-bottom: 1em;
+    padding: 0.25rem 1rem;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-stretch: condensed;
+    font-weight: bold;
+    font-family: 'Helvetica Neue';
+    border-radius: 0.75rem;
+    color: #f9f9f9;
+    border: 0;
+}
+
+.block-parent h3 {
+    margin: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.block-parent {
+    background-color: #e9e6f8;
+    border-radius: 0.75rem;
+}
+
+.block-content {
+    padding: 1em;
 }

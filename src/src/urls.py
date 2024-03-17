@@ -15,11 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
     path('', views.index, name='Index'),
-    path('edit/', views.edit, name="Edit"),
-    path('admin/', admin.site.urls)
+    path('edit/<id>', views.edit, name="Edit"),
+    path('admin/', admin.site.urls),
+    path("api/bucket/<slug:id>", views.JsonBucketView.as_view())
 ]
