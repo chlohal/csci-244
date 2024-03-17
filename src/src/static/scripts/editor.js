@@ -138,7 +138,11 @@ async function create_edit_canvas(id, canvas) {
 
     const canvasInner = document.createElement("div");
 
-    addDragging(canvasInner);
+    addDragging(canvasInner, (x,y) => {
+        data.perspective = {x, y};
+        sync();
+    }, data.perspective);
+    
     canvas.appendChild(canvasInner);
 
     function sync() {
@@ -195,7 +199,9 @@ function create_onscreen_block(block_info, sync_callback, parent) {
  *
  * @param {HTMLDivElement} element
  */
-function addDragging(element, cb, pos = {}) {
+function addDragging(element, cb, {}) {
+    if(!pos) pos = {};
+
     let dragging = false,
         originalX = 0,
         originalY = 0,
