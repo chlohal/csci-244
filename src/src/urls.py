@@ -22,5 +22,6 @@ urlpatterns = [
     path('', views.index, name='Index'),
     path('edit/<id>', views.edit, name="Edit"),
     path('admin/', admin.site.urls),
-    path("api/bucket/<slug:id>", views.JsonBucketView.as_view())
+    path("api/bucket/<id>", views.JsonBucketView.as_view()),
+    path("api/bucket/<id>/<path>", views.JsonBucketView.as_view())
 ]
