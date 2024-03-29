@@ -81,6 +81,9 @@ fetch("/api/bucket/blocks", {
                 {
                     name: "Attendance",
                     id: "canvas.attendance",
+                    inputs: [
+                        { label: "User", type: "logged_in_user<Clark>", id: "clark_user" }
+                    ]
                 },
                 {
                     name: "List Students",
@@ -103,6 +106,10 @@ fetch("/api/bucket/blocks", {
                 {
                     name: "QR Code Scan",
                     id: "user.qrcode_scan",
+                    inputs: [],
+                    outputs: [
+                        { label: "Scan", type: "user", id: "user_scan" }
+                    ]
                 },
             ],
         },
@@ -123,6 +130,13 @@ fetch("/api/bucket/blocks", {
                 {
                     name: "Clark Login",
                     id: "integrate.login.sso.clark",
+                    inputs: [
+                        { label: "User", type: "user", id: "user" }
+                    ],
+                    outputs: [
+                        { label: "Success", type: "logged_in_user<Clark>", id: "success" },
+                        { label: "Failure", type: "user", id: "failure" }
+                    ]
                 },
             ],
         },
@@ -197,11 +211,8 @@ async function create_edit_canvas(id, canvas) {
                 .toString(36)
                 .replace(".", "_");
 
-            const block = {
-                type: blockdef.id,
-                x: data.perspective.x,
-                y: data.perspective.y,
-            };
+            const block = blockdef_to_block(blockdef, data.perspective);
+
             create_onscreen_block(
                 block,
                 check_block_onscreen_sync(id),
@@ -213,6 +224,16 @@ async function create_edit_canvas(id, canvas) {
     };
 }
 
+function blockdef_to_block(blockdef, perspective) {
+    return {
+        type: blockdef.id,
+        x: perspective.x,
+        y: perspective.y,
+        data: {},
+        inputs: {},
+        outputs: {}
+    };
+}
 function create_onscreen_block(block_info, sync_callback, parent) {
     const block_parent = document.createElement("div");
     block_parent.classList.add("block-parent");
@@ -252,6 +273,57 @@ function create_onscreen_block(block_info, sync_callback, parent) {
     const block_content = document.createElement("div");
     block_content.classList.add("block-content");
     block_parent.appendChild(block_content);
+
+    init_block_content(block_info, block_content);
+}
+
+function init_block_content(block_info, content) {
+    const blockdef = BLOCK_INFO_MAP[block_info.type];
+
+    init_block_flows(blockdef.inputs, "input", content);
+
+    const inner = document.createElement("div");
+    content.appendChild(inner);
+    inner.classList.add("block-inner-content");
+
+    init_block_flows(blockdef.outputs, "output", content);
+
+
+    init_block_inner(block_info, inner);
+}
+
+async function init_block_inner(block_info, content_elem) {
+    const type = block_info.type;
+
+    if(BLOCK_INFO_MAP[type].init_content_function) {
+        BLOCK_INFO_MAP[type].init_content_function(block_info, content_elem)
+    } else {
+        const get_content_function = await fetch(`/static/scripts/block_edits/${type}.js`);
+        if(get_content_function.status !== 200) return false;
+
+        const content_function_source = await get_content_function.text();
+        const func = new Function("block_info", "content_elem", content_function_source);
+        BLOCK_INFO_MAP[type].init_content_function = func;
+        func(block_info, content_elem);
+    }
+}
+
+function init_block_flows(flows, type, parent) {
+    if(!flows) return; // THIS LINE FOR DEBUG
+
+    const ul = document.createElement("ul");
+    ul.classList.add("block-flow", type);
+    for(const flow of flows) {
+        const li = document.createElement("li");
+        const indicator = document.createElement("button");
+        li.appendChild(indicator);
+        const label = document.createElement("span");
+        label.textContent = flow.label;
+        li.appendChild(label);
+        ul.appendChild(li);
+    }
+
+    parent.appendChild(ul);
 }
 
 /**
