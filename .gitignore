@@ -2,4 +2,3 @@ src/db.*
 **/*.pyc
 src/src/auth_token.txt
 src/static/.netlify
-src/src/keys.txt
