@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'src.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-from . import database_info as db
+import database_info as db
 
 DATABASES = {
     'default': {
