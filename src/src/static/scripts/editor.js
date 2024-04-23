@@ -92,6 +92,9 @@ fetch("/api/bucket/blocks", {
                 {
                     name: "Submit Assignment",
                     id: "canvas.submit",
+                    inputs: [
+                        { label: "Submission File", type: "file", id: "submit_file" }
+                    ]
                 },
                 {
                     name: "Check Grades",
@@ -120,6 +123,45 @@ fetch("/api/bucket/blocks", {
                 {
                     name: "If",
                     id: "logic.if",
+                    inputs: [
+                        { label: "Condition", type: "condition", id: "if_cond" },
+                        { label: "Input Value", type: "condition", id: "if_cond" }
+                    ],
+                    outputs: [
+                        { label: "Pass", type: "condition", id: "if_true" },
+                        { label: "Fail", type: "condition", id: "else" }
+                    ]
+                },
+                {
+                    name: "Text Contains",
+                    id: "logic.substring",
+                    inputs: [
+                        { label: "Text" }
+                    ],
+                    outputs: [
+                        { label: "Contained?", type: "condition", id: "pass" },
+                    ]
+                },
+                {
+                    name: "Attribute",
+                    id: "logic.get_attribute",
+                    inputs: [
+                        { label: "Compound Object", type: "compound", id: "obj" }
+                    ],
+                    outputs: [
+                        { label: "Attribute Value", type: "*", id: "attr" },
+                    ]
+                },
+                {
+                    name: "File in Folder",
+                    id: "logic.folder_get_file",
+                    inputs: [
+                        { label: "Folder", type: "fs.folder", id: "folder" }
+                    ],
+                    outputs: [
+                        { label: "Content", type: "file", id: "attr" },
+                        { label: "Not Found", type: "condition", id: "attr" },
+                    ]
                 },
             ],
         },
@@ -127,6 +169,14 @@ fetch("/api/bucket/blocks", {
             name: "Integrations",
             color: "#930000",
             blocks: [
+                {
+                    name: "GitHub Repo Push",
+                    id: "integrate.github.repo_push",
+                    inputs: [],
+                    outputs: [
+                        { label: "Push", type: "compound", id: "on_push" },
+                    ]
+                },
                 {
                     name: "Clark Login",
                     id: "integrate.login.sso.clark",
@@ -136,6 +186,26 @@ fetch("/api/bucket/blocks", {
                     outputs: [
                         { label: "Success", type: "logged_in_user<Clark>", id: "success" },
                         { label: "Failure", type: "user", id: "failure" }
+                    ]
+                },
+                {
+                    name: "Convert File to PDF",
+                    id: "integrate.convert_file.pdf",
+                    inputs: [
+                        { label: "File", type: "file", id: "in_file" },
+                    ],
+                    outputs: [
+                        { label: "PDF", type: "file", id: "out_pdf" },
+                    ]
+                },
+                {
+                    name: "Zip Folder into Archive",
+                    id: "integrate.convert_file.zip",
+                    inputs: [
+                        { label: "Folder", type: "folder", id: "in_folder" },
+                    ],
+                    outputs: [
+                        { label: "ZIP Archive", type: "file", id: "out_zip" },
                     ]
                 },
             ],
@@ -207,10 +277,6 @@ async function create_edit_canvas(id, canvas) {
 
     return {
         addBlock: function (blockdef) {
-            const id = (Date.now() + Math.random())
-                .toString(36)
-                .replace(".", "_");
-
             const block = blockdef_to_block(blockdef, data.perspective);
 
             create_onscreen_block(
@@ -218,14 +284,18 @@ async function create_edit_canvas(id, canvas) {
                 check_block_onscreen_sync(id),
                 canvasInner
             );
-            data.blocks[id] = block;
-            sync_block(id);
+            data.blocks[block.id] = block;
+            sync_block(block.id);
         },
     };
 }
 
 function blockdef_to_block(blockdef, perspective) {
+    const id = (Date.now() + Math.random())
+                .toString(36)
+                .replace(".", "_");
     return {
+        id,
         type: blockdef.id,
         x: perspective.x,
         y: perspective.y,
@@ -252,10 +322,10 @@ function create_onscreen_block(block_info, sync_callback, parent) {
             x: block_info.x,
             y: block_info.y,
             start_dragging: () => {
-                parent.style.zIndex = 2;
+                block_parent.style.zIndex = 2;
             },
             stop_dragging: () => {
-                parent.style.zIndex = 0;
+                block_parent.style.zIndex = 0;
             },
         }
     );
@@ -280,13 +350,14 @@ function create_onscreen_block(block_info, sync_callback, parent) {
 function init_block_content(block_info, content) {
     const blockdef = BLOCK_INFO_MAP[block_info.type];
 
-    init_block_flows(blockdef.inputs, "input", content);
+    init_block_flows(blockdef.inputs, "input", content, block_info.id);
 
     const inner = document.createElement("div");
     content.appendChild(inner);
+    blockDragging(inner);
     inner.classList.add("block-inner-content");
 
-    init_block_flows(blockdef.outputs, "output", content);
+    init_block_flows(blockdef.outputs, "output", content, block_info.id);
 
 
     init_block_inner(block_info, inner);
@@ -308,15 +379,67 @@ async function init_block_inner(block_info, content_elem) {
     }
 }
 
-function init_block_flows(flows, type, parent) {
+function init_block_flows(flows, type, parent, block_id) {
     if(!flows) return; // THIS LINE FOR DEBUG
 
     const ul = document.createElement("ul");
     ul.classList.add("block-flow", type);
     for(const flow of flows) {
         const li = document.createElement("li");
+        const indicator_parent = document.createElement("i");
         const indicator = document.createElement("button");
-        li.appendChild(indicator);
+        li.appendChild(indicator_parent);
+        indicator_parent.appendChild(indicator);
+        indicator_parent.setAttribute("data-block-flow", `${block_id}:${type}:${flow.id}`);
+
+        let trail_parent = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        let trail = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        trail_parent.appendChild(trail);
+        indicator_parent.appendChild(trail_parent);
+
+        addDragging(indicator, (x,y)=>{
+            let windowBox = indicator.getClientRects().item(0);
+            let windowX = windowBox.x + windowBox.width / 2;
+            let windowY = windowBox.y + windowBox.height / 2;
+
+            console.log(windowX, windowY);
+
+            for(const elemAtPoint of document.elementsFromPoint(windowX, windowY)) {
+                console.log(elemAtPoint);
+                if (elemAtPoint != indicator && elemAtPoint.hasAttribute("data-block-flow")) {
+                    const [other_block_id, other_flow_type, other_flow_id] = elemAtPoint.getAttribute("data-block-flow").split(":");
+                    if (other_flow_type == type) {
+                    }
+
+                    return {x,y};   
+                }
+            }
+
+            return {
+                x: 0, y: 0
+            }
+        }, {
+            when_dragging: (x,y) => {
+                let aX = Math.abs(x);
+                let aY = Math.abs(y);
+                trail_parent.setAttribute("width", aX);
+                trail_parent.setAttribute("height", aY);
+
+
+                let trans = "";
+                if(x < 0) {
+                    trans += "scaleX(-1) ";
+                }
+                if(y < 0) {
+                    trans += "scaleY(-1) ";
+                }
+
+                trail_parent.style.transform = trans;
+
+                trail.setAttribute("d", `M0,0 C ${aX} 0 0 ${aY} ${aX},${aY}`);
+            }
+        });
+
         const label = document.createElement("span");
         label.textContent = flow.label;
         li.appendChild(label);
@@ -324,6 +447,11 @@ function init_block_flows(flows, type, parent) {
     }
 
     parent.appendChild(ul);
+}
+
+function blockDragging(element) {
+    let cb = e => e.stopPropagation();
+    element.addEventListener("mousedown", cb);
 }
 
 /**
@@ -341,15 +469,30 @@ function addDragging(element, cb, pos) {
 
     element.style.transform = `translate(${x}px, ${y}px)`;
 
+    function callUpdateCallback() {
+        if(!cb) return;
+        let cb_res = cb(x, y);
+
+        if(!cb_res) return;
+
+        if (typeof cb_res.x === "number") x = cb_res.x;
+        if (typeof cb_res.y === "number") y = cb_res.y;
+
+        element.style.transform = `translate(${x}px, ${y}px)`;
+        if(pos.when_dragging) pos.when_dragging(x,y);
+    }
+
     function mouseleave(e) {
         dragging = false;
-        if (cb) cb(x, y);
+        callUpdateCallback()
     }
 
     function mousemove(e) {
         if (dragging) {
             x = e.clientX - originalX;
             y = e.clientY - originalY;
+
+            if(pos.when_dragging) pos.when_dragging(x,y);
 
             element.style.transform = `translate(${x}px, ${y}px)`;
         }
@@ -368,13 +511,15 @@ function addDragging(element, cb, pos) {
         window.removeEventListener("mouseleave", mouseleave);
         window.removeEventListener("mousemove", mousemove);
 
-        if (cb) cb(x, y);
+        callUpdateCallback()
     }
 
     (pos.control_elem || element).addEventListener("mousedown", (e) => {
         dragging = true;
         originalX = e.clientX - x;
         originalY = e.clientY - y;
+
+        if(document.activeElement) document.activeElement.blur();
 
         if(pos.start_dragging) pos.start_dragging();
 
