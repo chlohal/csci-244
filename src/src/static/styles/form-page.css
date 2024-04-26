@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+:root,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #faf3ff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    height: 3.5rem;
+    background: #264EA6;
+    box-shadow: 0 0 0.8rem 0rem #0008;
+    z-index: 3;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main > .contentbox {
+    padding: 1em;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0.5em;
+    background: #fdfaff;
+}
+
+.modal-shadowbox {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #00032690;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+dialog.modal-popup {
+    border: 0;
+    border-radius: 1em;
+    padding: 2em;
+    background: #fafaff;
+    font-family: 'Helvetica Neue', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    max-width: 80vw;
+}
+
+dialog.modal-popup h2 {
+    margin-top: 0;
+    font-weight: 500;
+}

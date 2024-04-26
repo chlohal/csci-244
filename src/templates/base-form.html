@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <title>{% block title %}Form{%endblock%}</title>
+
+        <link rel="stylesheet" href="{% static 'styles/form-page.css' %}">
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <div class="contentbox">
+                {% block content %}{%endblock%}
+            </div>
+        </main>
+    </body>
+</html>

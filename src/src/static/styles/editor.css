@@ -2,7 +2,8 @@
     box-sizing: border-box;
 }
 
-:root, body {
+:root,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -73,13 +74,13 @@ ul.catpicker li button {
     position: relative;
 }
 
-.main-edit-canvas > div {
+.main-edit-canvas>div {
     height: 100%;
     width: 100%;
 }
 
-.main-edit-canvas > div,
-.main-edit-canvas > div > div {
+.main-edit-canvas>div,
+.main-edit-canvas>div>div {
     position: absolute;
 }
 
@@ -89,10 +90,11 @@ ul.catpicker li button {
 
 .block-select div {
     padding: 1em;
-    
+
 }
 
-.block-select div button, .block-parent h3 {
+.block-select div button,
+.block-parent h3 {
     margin-bottom: 1em;
     padding: 0.25rem 1rem;
     font-size: 1.25rem;
@@ -111,6 +113,7 @@ ul.catpicker li button {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
+
 .block-parent {
     background-color: #e9e6f8;
     border-radius: 0.75rem;
@@ -118,7 +121,7 @@ ul.catpicker li button {
 
 .block-content {
     padding: 1em;
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', sans-serif;
     display: flex;
     justify-content: space-evenly;
 }
@@ -193,15 +196,25 @@ ul.catpicker li button {
 }
 
 .block-content .block-flow.input svg {
-    
     left: 100%;
     transform-origin: top left;
 }
 
-.block-content .block-flow svg path {
+.block-content .block-flow svg path,
+.flow-indicator path {
     fill: none;
     stroke: #264EA6;
     stroke-width: 1px;
+}
+
+.flow-indicator {
+    pointer-events: none;
+    position: absolute;
+}
+
+.flow-indicator path {
+    stroke-width: 5px;
+    pointer-events: auto;
 }
 
 .block-content .block-flow.output {
@@ -212,4 +225,31 @@ ul.catpicker li button {
 
 .block-content .block-flow.output li {
     flex-direction: row-reverse;
+}
+
+.modal-shadowbox {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #00032690;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+dialog.modal-popup {
+    border: 0;
+    border-radius: 1em;
+    padding: 2em;
+    background: #fafaff;
+    font-family: 'Helvetica Neue', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    max-width: 80vw;
+}
+
+dialog.modal-popup h2 {
+    margin-top: 0;
+    font-weight: 500;
 }

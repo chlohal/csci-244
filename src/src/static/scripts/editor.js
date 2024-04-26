@@ -5,11 +5,14 @@ async function main() {
 
     let canvas = document.getElementsByClassName("main-edit-canvas")[0];
 
+    const req = await fetch(`/api/bucket/${my_id}`);
+    const data = (await req.json()) || {};
+
     let editCanvas = {};
 
     await create_new_block_buttons(editCanvas);
 
-    Object.assign(editCanvas, await create_edit_canvas(my_id, canvas));
+    Object.assign(editCanvas, await create_edit_canvas(my_id, canvas, data));
 }
 
 async function create_new_block_buttons(editCanvas) {
@@ -20,7 +23,7 @@ async function create_new_block_buttons(editCanvas) {
     categories.textContent = "";
     buttons.textContent = "";
 
-    const req = await fetch(`/api/bucket/blocks`);
+    const req = await fetch(`/api/block_types`);
     const data = await req.json();
 
     const cats_butts = [];
@@ -54,7 +57,13 @@ function add_create_block_button(blockdef, parent, editCanvas) {
     button.style.backgroundColor = blockdef.color;
 
     button.addEventListener("click", function () {
-        editCanvas.addBlock(blockdef);
+        if(blockdef.id.startsWith("canvas.") && !CANVAS_LOGGED_IN) {
+            ensureCanvasLogin(() => {
+                editCanvas.addBlock(blockdef);
+            });
+        } else {
+            editCanvas.addBlock(blockdef);
+        }
     });
 
     parent.appendChild(button);
@@ -71,152 +80,7 @@ function make_category_button(name, parent) {
     return button;
 }
 
-fetch("/api/bucket/blocks", {
-    method: "PUT",
-    body: JSON.stringify([
-        {
-            name: "Canvas",
-            color: "#730e37",
-            blocks: [
-                {
-                    name: "Attendance",
-                    id: "canvas.attendance",
-                    inputs: [
-                        { label: "User", type: "logged_in_user<Clark>", id: "clark_user" }
-                    ]
-                },
-                {
-                    name: "List Students",
-                    id: "canvas.students",
-                },
-                {
-                    name: "Submit Assignment",
-                    id: "canvas.submit",
-                    inputs: [
-                        { label: "Submission File", type: "file", id: "submit_file" }
-                    ]
-                },
-                {
-                    name: "Check Grades",
-                    id: "canvas.get_grades",
-                },
-            ],
-        },
-        {
-            name: "Users",
-            color: "#800080",
-            blocks: [
-                {
-                    name: "QR Code Scan",
-                    id: "user.qrcode_scan",
-                    inputs: [],
-                    outputs: [
-                        { label: "Scan", type: "user", id: "user_scan" }
-                    ]
-                },
-            ],
-        },
-        {
-            name: "Logic",
-            color: "#1d7402",
-            blocks: [
-                {
-                    name: "If",
-                    id: "logic.if",
-                    inputs: [
-                        { label: "Condition", type: "condition", id: "if_cond" },
-                        { label: "Input Value", type: "condition", id: "if_cond" }
-                    ],
-                    outputs: [
-                        { label: "Pass", type: "condition", id: "if_true" },
-                        { label: "Fail", type: "condition", id: "else" }
-                    ]
-                },
-                {
-                    name: "Text Contains",
-                    id: "logic.substring",
-                    inputs: [
-                        { label: "Text" }
-                    ],
-                    outputs: [
-                        { label: "Contained?", type: "condition", id: "pass" },
-                    ]
-                },
-                {
-                    name: "Attribute",
-                    id: "logic.get_attribute",
-                    inputs: [
-                        { label: "Compound Object", type: "compound", id: "obj" }
-                    ],
-                    outputs: [
-                        { label: "Attribute Value", type: "*", id: "attr" },
-                    ]
-                },
-                {
-                    name: "File in Folder",
-                    id: "logic.folder_get_file",
-                    inputs: [
-                        { label: "Folder", type: "fs.folder", id: "folder" }
-                    ],
-                    outputs: [
-                        { label: "Content", type: "file", id: "attr" },
-                        { label: "Not Found", type: "condition", id: "attr" },
-                    ]
-                },
-            ],
-        },
-        {
-            name: "Integrations",
-            color: "#930000",
-            blocks: [
-                {
-                    name: "GitHub Repo Push",
-                    id: "integrate.github.repo_push",
-                    inputs: [],
-                    outputs: [
-                        { label: "Push", type: "compound", id: "on_push" },
-                    ]
-                },
-                {
-                    name: "Clark Login",
-                    id: "integrate.login.sso.clark",
-                    inputs: [
-                        { label: "User", type: "user", id: "user" }
-                    ],
-                    outputs: [
-                        { label: "Success", type: "logged_in_user<Clark>", id: "success" },
-                        { label: "Failure", type: "user", id: "failure" }
-                    ]
-                },
-                {
-                    name: "Convert File to PDF",
-                    id: "integrate.convert_file.pdf",
-                    inputs: [
-                        { label: "File", type: "file", id: "in_file" },
-                    ],
-                    outputs: [
-                        { label: "PDF", type: "file", id: "out_pdf" },
-                    ]
-                },
-                {
-                    name: "Zip Folder into Archive",
-                    id: "integrate.convert_file.zip",
-                    inputs: [
-                        { label: "Folder", type: "folder", id: "in_folder" },
-                    ],
-                    outputs: [
-                        { label: "ZIP Archive", type: "file", id: "out_zip" },
-                    ]
-                },
-            ],
-        },
-    ]),
-});
-
-async function create_edit_canvas(id, canvas) {
-    const req = await fetch(`/api/bucket/${id}`);
-    const data = (await req.json()) || {};
-
+async function create_edit_canvas(id, canvas, data) {
     if (!data.perspective) data.perspective = { x: 0, y: 0 };
     if (!data.blocks) data.blocks = {}; //TEMP FOR DEBUG
 
@@ -251,6 +115,8 @@ async function create_edit_canvas(id, canvas) {
         });
     }
 
+    let create_flow_between = make_create_flow_between_func(canvasInner, data.blocks, sync_block);
+
     function check_block_onscreen_sync(id) {
         return function (block_elem) {
             let block = data.blocks[id];
@@ -267,13 +133,30 @@ async function create_edit_canvas(id, canvas) {
         };
     }
 
+    const flow_makers = [];
     for (const [id, block] of Object.entries(data.blocks)) {
         create_onscreen_block(
             block,
             check_block_onscreen_sync(id),
-            canvasInner
+            canvasInner,
+            create_flow_between
         );
+
+        console.log(block);
+
+        for(const [flow_id, flows] of Object.entries(block.flows)) {
+            for(const flow of flows) {
+                if(flow.direction == "out") {
+                    flow_makers.push(() => {
+                        make_flow_elem(canvasInner, data.blocks, id, flow_id, flow.block, flow.flow, sync_block);
+                    });
+                }
+            }
+        }
     }
+    setTimeout(() => {
+        for(const f of flow_makers) f();
+    }, 0);
 
     return {
         addBlock: function (blockdef) {
@@ -282,7 +165,8 @@ async function create_edit_canvas(id, canvas) {
             create_onscreen_block(
                 block,
                 check_block_onscreen_sync(id),
-                canvasInner
+                canvasInner,
+                create_flow_between
             );
             data.blocks[block.id] = block;
             sync_block(block.id);
@@ -300,23 +184,209 @@ function blockdef_to_block(blockdef, perspective) {
         x: perspective.x,
         y: perspective.y,
         data: {},
-        inputs: {},
-        outputs: {}
+        flows: {}
     };
 }
-function create_onscreen_block(block_info, sync_callback, parent) {
+
+let ENSURING_CANVAS_LOGIN = null;
+let CANVAS_LOGGED_IN = false;
+function ensureCanvasLogin(cb) {
+    if(CANVAS_LOGGED_IN) {
+        return cb(true);
+    }
+    if(ENSURING_CANVAS_LOGIN === null) {
+        ENSURING_CANVAS_LOGIN = cb ? [] : [cb];
+    } else {
+        ENSURING_CANVAS_LOGIN.push(cb);
+        return;
+    }
+
+    let shadowbox = document.createElement("div");
+    shadowbox.classList.add("modal-shadowbox");
+
+    let popup = document.createElement("dialog");
+    popup.open = true;
+    popup.classList.add("modal-popup");
+
+    popup.innerHTML = `<h2>Canvas Integration</h2>
+    <p>In order to connect properly with your Canvas account, you'll need to make a Canvas token and connect it with our system.</p>
+    <p>We'll do our best to make sure you don't have to repeat this step, but sometimes, Canvas will invalidate tokens for arbitrary security.</p>
+    <p>Please access <a href="https://canvas.clarku.edu/profile/settings#access_tokens_holder">this page</a> and create a new token 
+    according to <a href="https://community.canvaslms.com/t5/Student-Guide/How-do-I-manage-API-access-tokens-as-a-student/ta-p/273">Canvas's official tutorial</a>
+    </p>
+    <p>Then, copy/paste your token into the box below.</p>
+    <input placeholder="Token"> <button>Confirm</button>
+    `;
+
+    let input = popup.querySelector("input");
+    let button = popup.querySelector("button");
+
+    button.addEventListener("click", () => {
+        let token = input.value;
+        document.body.removeChild(shadowbox);
+        CANVAS_LOGGED_IN = true;
+        ENSURING_CANVAS_LOGIN.forEach(x=>x(true));
+        ENSURING_CANVAS_LOGIN = null;
+    })
+
+    shadowbox.addEventListener("click", (e) => { 
+        if(e.target === shadowbox) {
+            document.body.removeChild(shadowbox);
+            ENSURING_CANVAS_LOGIN.forEach(x=>x(false));
+            ENSURING_CANVAS_LOGIN = null;
+        }
+    })
+
+    shadowbox.appendChild(popup);
+    document.body.appendChild(shadowbox);
+}
+
+
+const FLOW_CACHE = {}
+const FLOW_CACHE_BY_BLOCKS_THAT_CARE = {}
+function make_create_flow_between_func(canvas, blocks, sync_block) {
+    return function create_flow_between(from_block_id, from_flow_id, to_block_id, to_flow_id) {
+        if(to_block_id === undefined || to_flow_id === undefined) {
+            return;
+        }
+
+        //if the flow already exists, don't recreate it
+        if(FLOW_CACHE[`${from_block_id}:${from_flow_id}:${to_block_id}:${to_flow_id}`]) return;
+
+
+        make_flow_elem(canvas, blocks, from_block_id, from_flow_id, to_block_id, to_flow_id, sync_block);
+
+
+        if(!blocks[from_block_id].flows[from_flow_id]) blocks[from_block_id].flows[from_flow_id] = [];
+        blocks[from_block_id].flows[from_flow_id].push({ block: to_block_id, flow: to_flow_id, direction: "out" });
+
+        if(!blocks[to_block_id].flows[to_flow_id]) blocks[to_block_id].flows[to_flow_id] = [];
+        blocks[to_block_id].flows[to_flow_id].push({ block: from_block_id, flow: from_flow_id, direction: "in" });
+
+        sync_block(from_block_id);
+        sync_block(to_block_id);
+    }
+}
+
+function make_flow_elem(canvas, blocks, from_block_id, from_flow_id, to_block_id, to_flow_id, sync_block) {
+    let from_block_elem = canvas.querySelector(`i[data-block-flow="${from_block_id}:output:${from_flow_id}"]`);
+    let to_block_elem = canvas.querySelector(`i[data-block-flow="${to_block_id}:input:${to_flow_id}"]`);
+
+    let from_block_def = blocks[from_block_id];
+    let to_block_def = blocks[to_block_id];
+    
+
+    let trail_parent = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    let trail = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    trail_parent.appendChild(trail);
+    trail_parent.classList.add("flow-indicator")
+    canvas.appendChild(trail_parent);
+
+    let from_offset_x = from_block_elem.offsetLeft + from_block_elem.offsetWidth / 2;
+    let from_offset_y = from_block_elem.offsetTop + from_block_elem.offsetHeight / 2;
+
+    let to_offset_x = to_block_elem.offsetLeft + to_block_elem.offsetWidth / 2;
+    let to_offset_y = to_block_elem.offsetTop + to_block_elem.offsetHeight / 2;
+
+    let self = { update_flow_pos, remove }
+
+    function remove() {
+        if(trail_parent.parentElement) canvas.removeChild(trail_parent);
+        delete FLOW_CACHE[`${from_block_id}:${from_flow_id}:${to_block_id}:${to_flow_id}`];
+
+        FLOW_CACHE_BY_BLOCKS_THAT_CARE[from_block_id].delete(self);
+        FLOW_CACHE_BY_BLOCKS_THAT_CARE[to_block_id].delete(self);
+
+        let from_flows = from_block_def.flows[from_flow_id];
+        for(let i = from_flows.length; i --> 0; ) {
+            let flow = from_flows[i];
+            console.log(flow,to_block_id, to_flow_id);
+            if(flow.block === to_block_id && flow.flow === to_flow_id) {
+                from_flows.splice(i, 1);
+                break;
+            }
+        }
+
+        let to_flows = to_block_def.flows[to_flow_id];
+        for(let i = to_flows.length; i --> 0; ) {
+            let flow = to_flows[i];
+            if(flow.block === from_block_id && flow.flow === from_flow_id) {
+                to_flows.splice(i, 1);
+                break;
+            }
+        }
+
+        sync_block(from_block_id);
+        sync_block(to_block_id);
+    }
+
+    let SVG_PADDING = 5;
+
+    function update_flow_pos() {
+        let from_pos_x = from_block_def.x + from_offset_x;
+        let from_pos_y = from_block_def.y + from_offset_y;
+
+        let to_pos_x = to_block_def.x + to_offset_x;
+        let to_pos_y = to_block_def.y + to_offset_y;
+
+        let span_x = Math.abs(to_pos_x - from_pos_x);
+        let span_y = Math.abs(to_pos_y - from_pos_y);
+
+        trail_parent.setAttribute("width", span_x + SVG_PADDING * 2);
+        trail_parent.setAttribute("height", span_y + SVG_PADDING * 2);
+
+        let orig_x = Math.min(from_pos_x, to_pos_x);
+        let orig_y = Math.min(from_pos_y, to_pos_y);
+
+        trail_parent.style.transform = `translate(${orig_x - SVG_PADDING}px, ${orig_y - SVG_PADDING}px)`;
+
+        let svg_from_x = from_pos_x - orig_x + SVG_PADDING;
+        let svg_from_y = from_pos_y - orig_y + SVG_PADDING;
+
+        let svg_to_x = to_pos_x - orig_x + SVG_PADDING;
+        let svg_to_y = to_pos_y - orig_y + SVG_PADDING;
+
+        trail.setAttribute("d", `M${svg_from_x},${svg_from_y} C ${svg_to_x} ${svg_from_y} ${svg_from_x} ${svg_to_y} ${svg_to_x},${svg_to_y}`);
+    }
+
+    trail.addEventListener("click", () => {
+        remove();
+    });
+
+    update_flow_pos();
+
+
+    FLOW_CACHE_BY_BLOCKS_THAT_CARE[from_block_id].add(self);
+    FLOW_CACHE_BY_BLOCKS_THAT_CARE[to_block_id].add(self);
+
+    FLOW_CACHE[`${from_block_id}:${from_flow_id}:${to_block_id}:${to_flow_id}`] = self;
+
+    return self;
+
+}
+
+function create_onscreen_block(block_info, sync_callback, parent, create_flow_between) {
     const block_parent = document.createElement("div");
     block_parent.classList.add("block-parent");
 
+    FLOW_CACHE_BY_BLOCKS_THAT_CARE[block_info.id] = new Set();
+
     let self = {};
-    self.remove = () => parent.removeChild(block_parent);
+    self.remove = () => {
+        parent.removeChild(block_parent);
+        for(const flow of FLOW_CACHE_BY_BLOCKS_THAT_CARE[block_info.id]) {
+            flow.remove();
+        }
+    }
+
+    sync_callback = sync_callback.bind(null, self);
 
     addDragging(
         block_parent,
         (x, y) => {
             block_info.x = x;
             block_info.y = y;
-            sync_callback(self);
+            sync_callback();
         },
         {
             x: block_info.x,
@@ -327,6 +397,14 @@ function create_onscreen_block(block_info, sync_callback, parent) {
             stop_dragging: () => {
                 block_parent.style.zIndex = 0;
             },
+            when_dragging: (x,y) => {
+                block_info.x = x;
+                block_info.y = y;
+
+                for(const flow of FLOW_CACHE_BY_BLOCKS_THAT_CARE[block_info.id]) {
+                    flow.update_flow_pos();
+                }
+            }
         }
     );
 
@@ -344,20 +422,22 @@ function create_onscreen_block(block_info, sync_callback, parent) {
     block_content.classList.add("block-content");
     block_parent.appendChild(block_content);
 
-    init_block_content(block_info, block_content);
+    init_block_content(block_info, block_content, sync_callback, create_flow_between);
 }
 
-function init_block_content(block_info, content) {
+function init_block_content(block_info, content, sync_callback, create_flow_between) {
     const blockdef = BLOCK_INFO_MAP[block_info.type];
 
-    init_block_flows(blockdef.inputs, "input", content, block_info.id);
+    if(!blockdef.flows) blockdef.flows = {};
+
+    init_block_flows(blockdef.flows.filter(x=>x.is_input), "input", content, block_info.id, create_flow_between);
 
     const inner = document.createElement("div");
     content.appendChild(inner);
     blockDragging(inner);
     inner.classList.add("block-inner-content");
 
-    init_block_flows(blockdef.outputs, "output", content, block_info.id);
+    init_block_flows(blockdef.flows.filter(x=>!x.is_input), "output", content, block_info.id, create_flow_between);
 
 
     init_block_inner(block_info, inner);
@@ -379,7 +459,7 @@ async function init_block_inner(block_info, content_elem) {
     }
 }
 
-function init_block_flows(flows, type, parent, block_id) {
+function init_block_flows(flows, type, parent, block_id, create_flow_between) {
     if(!flows) return; // THIS LINE FOR DEBUG
 
     const ul = document.createElement("ul");
@@ -405,21 +485,32 @@ function init_block_flows(flows, type, parent, block_id) {
             console.log(windowX, windowY);
 
             for(const elemAtPoint of document.elementsFromPoint(windowX, windowY)) {
-                console.log(elemAtPoint);
+
                 if (elemAtPoint != indicator && elemAtPoint.hasAttribute("data-block-flow")) {
                     const [other_block_id, other_flow_type, other_flow_id] = elemAtPoint.getAttribute("data-block-flow").split(":");
                     if (other_flow_type == type) {
+                        continue;
                     }
 
-                    return {x,y};   
+                    if(other_flow_type === "input") {
+                        create_flow_between(block_id, flow.id, other_block_id, other_flow_id);
+                    } else {
+                        create_flow_between(other_block_id, other_flow_id, block_id, flow.id);
+                    }
+
+                    return  {
+                        x: 0, y: 0
+                    };
                 }
             }
+
+            create_flow_between(block_id, flow.id, undefined, undefined);
 
             return {
                 x: 0, y: 0
             }
         }, {
-            when_dragging: (x,y) => {
+            when_dragging: function updateTrail(x,y) {
                 let aX = Math.abs(x);
                 let aY = Math.abs(y);
                 trail_parent.setAttribute("width", aX);
