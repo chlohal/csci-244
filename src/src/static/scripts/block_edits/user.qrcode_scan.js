@@ -21,7 +21,7 @@ content_elem.innerHTML = `
 <a target="_blank" href="/qr/present/${qr_id}" style="display:flex;flex-direction:column"> 
 <div>Download</div>
 <img width="64" height="64" src="/qr/render/?&data=${
-    encodeURIComponent(`http://localhost:8080/qr/flow/${qr_id}`)
+    encodeURIComponent(`http://localhost:8080/userflow/qr/${qr_id}`)
 }">
 </a>
 `

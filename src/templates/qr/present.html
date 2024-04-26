@@ -1,0 +1,54 @@
+{% extends "base-form.html" %}
+
+{%block head %}
+
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  li {
+    padding: 1em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    background-color: #f3efff;
+    border-radius: 1em;
+  }
+
+  .last-edit {
+    font-size: 0.9em;
+  }
+
+  .contentbox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contentbox img {
+    width: auto;
+  }
+  .center {
+    display: block;
+    text-align: center;
+  }
+  li nav {
+    margin-left: auto;
+  }
+</style>
+{%endblock%}
+
+{% block title %}My Flows{% endblock %}
+
+{%block content%}
+<h2>QR Code</h2>
+<img src="/qr/render?data=http://localhost:8080/userflow/qr/${{qrcode}}">
+<p>This QR code can be scanned by anyone to access your user flow.</p>
+<p>You can also <a href="/qr/render?data=http://localhost:8080/userflow/qr/${{qrcode}}" download>download the image for use in other programs</a>.</p>
+{% endblock %}

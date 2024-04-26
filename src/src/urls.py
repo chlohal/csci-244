@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.decorators import login_required
 
+from .qr_flow.qr_render import render_qr_code
+
 from .views import SignUpView
 from . import views
 
@@ -32,4 +34,6 @@ urlpatterns = [
     path("accounts/signup/", SignUpView.as_view(), name="signup"),
     path("accounts/", include("django.contrib.auth.urls")),
     path("api/", include(api_patterns)),
+    path("qr/render/", render_qr_code),
+    path("qr/present/<qrcode>", views.present_qr_code)
 ]

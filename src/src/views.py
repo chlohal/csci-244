@@ -28,6 +28,11 @@ def edit(request, id):
         "canvas_token_exists": dumps(canvas_token_exists)
     })
 
+def present_qr_code(request, **kwargs):
+    return render(request, "qr/present.html", {
+        "qrcode": kwargs['qrcode']
+    })
+
 
 class SignUpView(CreateView):
     form_class = UserCreationForm
