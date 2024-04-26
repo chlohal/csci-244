@@ -323,7 +323,7 @@ function make_flow_elem(canvas, blocks, from_block_id, from_flow_id, to_block_id
             }
         }
 
-        let to_flows = to_block_def.flows[to_flow_id];
+        let to_flows = to_block_def.flows[to_flow_id] || [];
         for(let i = to_flows.length; i --> 0; ) {
             let flow = to_flows[i];
             if(flow.block === from_block_id && flow.flow === from_flow_id) {
@@ -395,14 +395,14 @@ function create_onscreen_block(block_info, sync_callback, parent, create_flow_be
         }
     }
 
-    sync_callback = sync_callback.bind(null, self);
+    block_parent.style.zIndex = 1;
 
     addDragging(
         block_parent,
         (x, y) => {
             block_info.x = x;
             block_info.y = y;
-            sync_callback();
+            sync_callback(self);
         },
         {
             x: block_info.x,
@@ -411,7 +411,7 @@ function create_onscreen_block(block_info, sync_callback, parent, create_flow_be
                 block_parent.style.zIndex = 2;
             },
             stop_dragging: () => {
-                block_parent.style.zIndex = 0;
+                block_parent.style.zIndex = 1;
             },
             when_dragging: (x,y) => {
                 block_info.x = x;
@@ -438,7 +438,7 @@ function create_onscreen_block(block_info, sync_callback, parent, create_flow_be
     block_content.classList.add("block-content");
     block_parent.appendChild(block_content);
 
-    init_block_content(block_info, block_content, sync_callback, create_flow_between);
+    init_block_content(block_info, block_content, () => sync_callback(self), create_flow_between);
 }
 
 function init_block_content(block_info, content, sync_callback, create_flow_between) {
@@ -456,10 +456,10 @@ function init_block_content(block_info, content, sync_callback, create_flow_betw
     init_block_flows(blockdef.flows.filter(x=>!x.is_input), "output", content, block_info.id, create_flow_between);
 
 
-    init_block_inner(block_info, inner);
+    init_block_inner(block_info, inner, sync_callback);
 }
 
-async function init_block_inner(block_info, content_elem) {
+async function init_block_inner(block_info, content_elem, sync_callback) {
     const type = block_info.type;
 
     if(BLOCK_INFO_MAP[type].init_content_function) {
@@ -468,10 +468,16 @@ async function init_block_inner(block_info, content_elem) {
         const get_content_function = await fetch(`/static/scripts/block_edits/${type}.js`);
         if(get_content_function.status !== 200) return false;
 
+        const blocksLocalStorage = {
+            getItem: (item) => block_info.data[item],
+            setItem: (item,v) => {block_info.data[item] = v; sync_callback(); },
+            removeItem: (item) => { delete block_info.data[item]; sync_callback(); },
+        }
+        const AsyncFunction = (async function () {}).constructor;
         const content_function_source = await get_content_function.text();
-        const func = new Function("block_info", "content_elem", content_function_source);
+        const func = new AsyncFunction("localStorage", "block_info", "content_elem", content_function_source);
         BLOCK_INFO_MAP[type].init_content_function = func;
-        func(block_info, content_elem);
+        func(blocksLocalStorage, block_info, content_elem);
     }
 }
 

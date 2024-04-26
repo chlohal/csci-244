@@ -3,7 +3,7 @@ from django.urls import path
 from .block_types import block_types
 
 from .flowchart_storage import FlowchartStorageView
-from .canvas_integration import CanvasIntegrationManagerView
+from .canvas_integration import CanvasIntegrationManagerView, CanvasApiProxyView
 from .debug_json_bucket_api import JsonBucketView
 from .per_block.qrcode import QrCodeApiView
 
@@ -16,4 +16,5 @@ api_patterns = [
     path("block_types", block_types),
     path("blocks/qrcode", login_required(QrCodeApiView.as_view())),
     path("integrate/canvas", login_required(CanvasIntegrationManagerView.as_view())),
+    path("integrate/canvas/<path:api_query_path>", login_required(CanvasApiProxyView.as_view())),
 ]
