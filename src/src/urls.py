@@ -36,5 +36,6 @@ urlpatterns = [
     path("api/", include(api_patterns)),
     path("qr/render/", views.render_qr_code),
     path("qr/present/<qrcode>", views.present_qr_code),
-    path("userflow/<context>/<path:path_remaining>", user_flow_view)
+    path("userflow/<context>/<path:path_remaining>", user_flow_view),
+    path("edit_attendance/<flowchart>", login_required(views.edit_attendance)),
 ]

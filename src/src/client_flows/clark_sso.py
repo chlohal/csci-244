@@ -72,22 +72,32 @@ def validate_and_store_ticket(request, context, path_remaining, state):
     validation_json = validation.json()
 
     state.state['accumulated_user_information']['sso.clark'] = validation_json
+
+    if not clark_sso_succeeded(state):
+        return clark_sso_initiate(request, context, path_remaining, state)
+    
+
     state.save()
+    return True
 
 def clark_sso_process(request, context, path_remaining, state):
     if path_remaining == "sso.clark.verify":
-        validate_and_store_ticket(request, context, path_remaining, state)
-        return True
+        return validate_and_store_ticket(request, context, path_remaining, state)
     else:
         return clark_sso_initiate(request, context, path_remaining, state)
 
 def clark_sso_initiate(request, context, path_remaining, state):
     # don't bother reauthenticating if we've already succeeded
-    if state.state['accumulated_user_information']['sso.clark']:
-        if state.state['accumulated_user_information']['sso.clark']['serviceResponse']:
-            if state.state['accumulated_user_information']['sso.clark']['serviceResponse']['authenticationSuccess']:
-                return True
-
-    redir_url = generate_cas_login_url(THIS_HOST, str(state.uuid), None, sign(context))
+    if clark_sso_succeeded(state):
+        return True
+    
+    ctx = str(state.uuid)
+    redir_url = generate_cas_login_url(THIS_HOST, ctx, None, sign(ctx))
     
     return redirect(redir_url)
+
+def clark_sso_succeeded(state):
+    if "sso.clark" in state.state['accumulated_user_information']:
+        if "serviceResponse" in state.state['accumulated_user_information']['sso.clark']:
+            if "authenticationSuccess" in state.state['accumulated_user_information']['sso.clark']['serviceResponse']:
+                return True

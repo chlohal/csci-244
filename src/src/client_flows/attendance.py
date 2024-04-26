@@ -38,6 +38,7 @@ def record_attendance(request, context, path_remaining, state, block_specific_id
         recorded_at=datetime.now(),
         section=blockdata['section_id'],
         status=blockdata.get("mark_as") or "Present",
-        student_email=student_email
+        student_email=student_email,
+        by_flowchart=state.flowchart,
     )
     return True

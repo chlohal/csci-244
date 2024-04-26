@@ -1,3 +1,5 @@
+from datetime import date
+from uuid import UUID
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
@@ -7,7 +9,7 @@ import os
 from json import dumps
 import qrcode
 
-from .models import CanvasToken, Flowchart
+from .models import AttendanceDayPolyfillRecordings, CanvasToken, Flowchart
 
 def index(request):
     if request.user != None:
@@ -39,6 +41,26 @@ def render_qr_code(request):
     qrcode.make(request.GET.get("data")).save(resp, "PNG")
     return resp
 
+def edit_attendance(request, **kwargs):
+    try: 
+        if request.GET.get("delete", None):
+            to_del = request.GET.get("delete", None)
+            AttendanceDayPolyfillRecordings.objects.filter(id=to_del).delete()
+        
+        day = request.GET.get("day", date.today().strftime("%Y-%m-%d"))
+        day = date(*[int(x or 0) for x in day.split("-")])
+        day_ymd = day.strftime("%Y-%m-%d")
+
+        chart_id = UUID(hex=kwargs['flowchart'])
+
+        if Flowchart.objects.get(id=chart_id).user != request.user:
+            return HttpResponse(status=403)
+        
+        recordings = AttendanceDayPolyfillRecordings.objects.filter(by_flowchart=chart_id, recorded_at__date=day).all()
+
+        return render(request, "edit-attendance.html", { "recordings": recordings, "day": day, "day_ymd": day_ymd })
+    except:
+        return HttpResponse(status=400)
 
 class SignUpView(CreateView):
     form_class = UserCreationForm

@@ -40,3 +40,18 @@ label.textContent = "Section";
 
 label.appendChild(choice);
 content_elem.appendChild(label);
+
+
+let heading = content_elem.parentElement.parentElement.querySelector("h3");
+let edit_link = document.createElement("a");
+let flowchart_id = window.location.pathname.split("/")[2];
+edit_link.href = "/edit_attendance/" + flowchart_id;
+edit_link.target = "_blank";
+edit_link.style="margin-left:auto;margin-right:-0.5rem;";
+
+let pencil = document.createElement("img");
+pencil.style = "width:1em;height:1em";
+pencil.src = "/static/imgs/pencil.svg";
+
+edit_link.appendChild(pencil);
+heading.appendChild(edit_link);

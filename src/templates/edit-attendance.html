@@ -1,0 +1,100 @@
+{% extends "base-form.html" %}
+
+{%block head %}
+
+<style>
+    main {
+        display: block !important;
+        background-color: #fdfaff;
+        
+    }
+
+    main > .contentbox {
+        text-align: left !important;
+    }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  li {
+    padding: 1em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    background-color: #f3efff;
+    border-radius: 1em;
+  }
+
+  .last-edit {
+    font-size: 0.9em;
+  }
+
+  .center {
+    display: block;
+    text-align: center;
+  }
+  li nav {
+    margin-left: auto;
+  }
+  table {
+    margin: 1em 0;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th,td {
+    padding: 1em;
+    border: 1px solid black;
+  }
+  th {
+    background-color: rgb(226, 218, 241)
+  }
+  td:has(img) {
+    padding: 0.25em;
+  }
+  img {
+    width: 1.5em;
+  }
+</style>
+<script>
+  function deleteAttendance(id) {
+    fetch(`?delete=${id}`).then(() => {
+      window.location.reload();
+    })
+  }
+</script>
+{%endblock%}
+
+{% block title %}Recorded Attendance{% endblock %}
+
+{%block content%}
+<h2>Recorded Attendance</h2>
+<form>
+    <label>Day to View
+        <input type="date" name="day" value="{{day_ymd}}">
+    </label>
+    <button type="submit">Filter</button>
+</form>
+<table>
+    <tr>
+        <th>Student Email</th>
+        <th>Recorded At</th>
+        <th>Attendance Status</th>
+        <th></th>
+    </tr>
+    {% for recording in recordings %}
+    <tr>
+        <td>{{recording.student_email}}</td>
+        <td>{{recording.recorded_at}}</td>
+        <td>{{recording.status}}</td>
+        <td><button onclick="deleteAttendance('{{recording.id}}')"><img src="/static/imgs/trash.svg"></button></td>
+        </tr>
+      </li>
+      {% empty %}
+      <span>No attendance has been recorded for {{day}}</span>
+    {% endfor %}
+</table>
+
+{% endblock %}

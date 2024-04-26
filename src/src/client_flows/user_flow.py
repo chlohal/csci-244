@@ -27,7 +27,7 @@ def make_new_flow_instance(request, context, path_remaining):
             code_id = QrCodeId.objects.get(uuid=path_remaining)
             flowchart_contents = code_id.flowchart.contents
             steps = build_next_steps_for_user(flowchart_contents['blocks'], code_id.block_in_flowchart_id, 'user.qrcode_scan.scan')
-
+            
             new_state = FlowInstanceState.objects.create(
                 flowchart=code_id.flowchart,
                 state={ "done_step_count": 0, "steps": steps, "accumulated_user_information": dict() }

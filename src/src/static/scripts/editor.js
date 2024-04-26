@@ -80,7 +80,7 @@ function make_category_button(name, parent) {
     return button;
 }
 
-async function create_edit_canvas(id, canvas, data) {
+async function create_edit_canvas(flowchartId, canvas, data) {
     if (!data.perspective) data.perspective = { x: 0, y: 0 };
     if (!data.blocks) data.blocks = {}; //TEMP FOR DEBUG
 
@@ -120,14 +120,17 @@ async function create_edit_canvas(id, canvas, data) {
     });
 
     function sync_perspective() {
-        fetch(`/api/flowcharts/${id}/perspective`, {
+        fetch(`/api/flowcharts/${flowchartId}/perspective`, {
             method: "PATCH",
             body: JSON.stringify(data.perspective),
         });
     }
 
     function sync_block(block_id) {
-        fetch(`/api/flowcharts/${id}/blocks.${block_id}`, {
+        if(block_id.includes("-")) {
+            throw new Error("no that's not the right one");
+        }
+        fetch(`/api/flowcharts/${flowchartId}/blocks.${block_id}`, {
             method: "PATCH",
             body: JSON.stringify(data.blocks[block_id]),
         });
@@ -149,10 +152,10 @@ async function create_edit_canvas(id, canvas, data) {
     }
 
     const flow_makers = [];
-    for (const [id, block] of Object.entries(data.blocks)) {
+    for (const [blockId, block] of Object.entries(data.blocks)) {
         create_onscreen_block(
             block,
-            check_block_onscreen_sync(id),
+            check_block_onscreen_sync(blockId),
             canvasInner,
             create_flow_between
         );
@@ -163,7 +166,7 @@ async function create_edit_canvas(id, canvas, data) {
             for(const flow of flows) {
                 if(flow.direction == "out") {
                     flow_makers.push(() => {
-                        make_flow_elem(canvasInner, data.blocks, id, flow_id, flow.block, flow.flow, sync_block);
+                        make_flow_elem(canvasInner, data.blocks, blockId, flow_id, flow.block, flow.flow, sync_block);
                     });
                 }
             }
@@ -181,7 +184,7 @@ async function create_edit_canvas(id, canvas, data) {
 
             create_onscreen_block(
                 block,
-                check_block_onscreen_sync(id),
+                check_block_onscreen_sync(block.id),
                 canvasInner,
                 create_flow_between
             );
@@ -192,11 +195,11 @@ async function create_edit_canvas(id, canvas, data) {
 }
 
 function blockdef_to_block(blockdef, perspective) {
-    const id = (Date.now() + Math.random())
+    const blockId = (Date.now() + Math.random())
                 .toString(36)
                 .replace(".", "_");
     return {
-        id,
+        id: blockId,
         type: blockdef.id,
         x: perspective.x,
         y: perspective.y,
@@ -302,6 +305,7 @@ function make_create_flow_between_func(canvas, blocks, sync_block) {
 }
 
 function make_flow_elem(canvas, blocks, from_block_id, from_flow_id, to_block_id, to_flow_id, sync_block) {
+    console.log(`${from_block_id}:output:${from_flow_id}`);
     let from_block_elem = canvas.querySelector(`i[data-block-flow="${from_block_id}:output:${from_flow_id}"]`);
     let to_block_elem = canvas.querySelector(`i[data-block-flow="${to_block_id}:input:${to_flow_id}"]`);
 
