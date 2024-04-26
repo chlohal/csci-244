@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.decorators import login_required
 
-from .views import SignUpView, render_qr_code
+from .views import SignUpView
 from . import views
 
 from .api.all_api_routes import api_patterns
