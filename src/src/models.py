@@ -34,3 +34,13 @@ class Flowchart(models.Model):
     last_edit = models.DateTimeField(null=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     contents = models.JSONField()
+
+class QrCodeId(models.Model):
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    flowchart = models.ForeignKey(Flowchart, on_delete=models.CASCADE)
+    block_in_flowchart_id = models.CharField(max_length=128)
+
+    class Meta:
+        unique_together = (
+            ("flowchart", "block_in_flowchart_id")
+        )

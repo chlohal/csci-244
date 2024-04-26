@@ -148,7 +148,8 @@ ul.catpicker li button {
     flex-grow: 0;
     display: flex;
     flex-direction: column;
-    padding: 0.5em;
+    margin: 0.5em;
+    margin-top: 0.5em;
 }
 
 .block-inner-content h3 {
