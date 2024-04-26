@@ -84,6 +84,15 @@ ul.catpicker li button {
     position: absolute;
 }
 
+.main-edit-canvas .trash {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 6em;
+    padding-bottom: 1em;
+    padding-right: 1em;
+}
+
 .block-select {
     flex-grow: 1;
 }

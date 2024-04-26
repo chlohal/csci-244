@@ -101,6 +101,24 @@ async function create_edit_canvas(id, canvas, data) {
 
     canvas.appendChild(canvasInner);
 
+    const trashCan = document.createElement("img");
+    trashCan.src = "/static/imgs/trash.svg"
+    trashCan.classList.add("trash");
+    canvas.appendChild(trashCan);
+    let desiredToDeleteCurrentBlock = false;
+
+    trashCan.addEventListener("mouseenter", () => {
+        desiredToDeleteCurrentBlock = true;
+        console.log("MOUSE");
+    });
+    trashCan.addEventListener("mouseleave", () => {
+        desiredToDeleteCurrentBlock = false;
+        console.log("NOMOUSE");
+    });
+    window.addEventListener("mouseleave", () => {
+        desiredToDeleteCurrentBlock = false;
+    });
+
     function sync_perspective() {
         fetch(`/api/flowcharts/${id}/perspective`, {
             method: "PATCH",
@@ -122,14 +140,12 @@ async function create_edit_canvas(id, canvas, data) {
             let block = data.blocks[id];
             if (!block) return;
 
-            let is_still_onscreen = data.perspective.x + block.x >= 0;
-            if (is_still_onscreen) {
-                sync_block(id);
-            } else {
+            if (desiredToDeleteCurrentBlock) {
                 block_elem.remove();
                 delete data.blocks[id];
-                sync_block(id);
             }
+
+            sync_block(id);
         };
     }
 
