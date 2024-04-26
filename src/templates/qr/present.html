@@ -10,6 +10,7 @@
     flex-direction: column;
     gap: 1em;
   }
+
   li {
     padding: 1em;
     display: flex;
@@ -31,15 +32,27 @@
     align-items: center;
     justify-content: center;
   }
+
   .contentbox img {
     width: auto;
   }
+
   .center {
     display: block;
     text-align: center;
   }
+
   li nav {
     margin-left: auto;
+  }
+
+  p {
+    width: 60em;
+    max-width: 100vw;
+    text-align: center;
+  }
+  code {
+    white-space: nowrap;
   }
 </style>
 {%endblock%}
@@ -50,5 +63,6 @@
 <h2>QR Code</h2>
 <img src="/qr/render?data=http://localhost:8080/userflow/qr/{{qrcode}}">
 <p>This QR code can be scanned by anyone to access your user flow.</p>
-<p>You can also <a href="/qr/render?data=http://localhost:8080/userflow/qr/${{qrcode}}" download>download the image for use in other programs</a>.</p>
+<p>You can also <a href="/qr/render?data=http://localhost:8080/userflow/qr/${{qrcode}}" download>download the image for
+    use in other programs</a>, or distribute the following URL: <code>http://localhost:8080/userflow/qr/${{qrcode}}</code></p>
 {% endblock %}
