@@ -1,7 +1,8 @@
 from uuid import UUID
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 
+from src.client_flows.attendance import record_attendance
 from src.client_flows.clark_sso import clark_sso_process
 from src.client_flows.forms import form_process
 from src.models import FlowInstanceState, QrCodeId
@@ -36,6 +37,9 @@ def make_new_flow_instance(request, context, path_remaining):
             return HttpResponse(status=404, content="404 Not Found")
 
 def process_next_step(request, context, path_remaining, state):
+    if state.state['done_step_count'] >= len(state.state['steps']):
+        return user_done_page(request)
+    
     next_step_def = process_next_step_int(request, context, path_remaining, state)
     while next_step_def is True:
         state.state['done_step_count'] += 1
@@ -50,7 +54,7 @@ def process_next_step(request, context, path_remaining, state):
 
 
 def user_done_page(request):
-    return HttpResponse("done!")
+    return render(request, "client-flow-complete.html")
     
 
 def process_next_step_int(request, context, path_remaining, state):

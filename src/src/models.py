@@ -53,4 +53,6 @@ class FlowInstanceState(models.Model):
 class AttendanceDayPolyfillRecordings(models.Model):
     instructor_access = models.ForeignKey(CanvasToken, on_delete=models.CASCADE)
     recorded_at = models.DateTimeField()
+    section = models.CharField(max_length=10)
     status = models.CharField(max_length=10)
+    student_email = models.CharField(max_length=700)

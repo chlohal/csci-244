@@ -1,4 +1,5 @@
 let input = document.createElement("input");
+input.value = localStorage.getItem("question") || ""
 
 input.addEventListener("change", () => {
     localStorage.setItem("question", input.value);

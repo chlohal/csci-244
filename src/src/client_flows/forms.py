@@ -7,10 +7,9 @@ def form_process(request, context, path_remaining, state, block_id):
 
     if path_remaining == "submit_form":
         if "form_answers" not in state.state['accumulated_user_information']:
-            state.state['accumulated_user_information']['form_answers'] = []
-        state.state['accumulated_user_information']['form_answers'].append({
-            "": ""
-        })
+            state.state['accumulated_user_information']['form_answers'] = dict()
+        question = blockdata['data'].get("question")
+        state.state['accumulated_user_information']['form_answers'][block_id] = (question, request.GET.get(block_id, ""))
         return True
     else:
         return render(request, "generic-form.html", {

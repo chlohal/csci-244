@@ -82,6 +82,12 @@ def clark_sso_process(request, context, path_remaining, state):
         return clark_sso_initiate(request, context, path_remaining, state)
 
 def clark_sso_initiate(request, context, path_remaining, state):
+    # don't bother reauthenticating if we've already succeeded
+    if state.state['accumulated_user_information']['sso.clark']:
+        if state.state['accumulated_user_information']['sso.clark']['serviceResponse']:
+            if state.state['accumulated_user_information']['sso.clark']['serviceResponse']['authenticationSuccess']:
+                return True
+
     redir_url = generate_cas_login_url(THIS_HOST, str(state.uuid), None, sign(context))
     
     return redirect(redir_url)
