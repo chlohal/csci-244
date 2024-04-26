@@ -49,11 +49,8 @@ def submit(uuid: str) -> None:
 
     students = Student.objects.filter(uuid=uuid)
     sids = get_user_ids(list(set([s.name for s in students])))
-    print(sids)
     
-    # print(requests.post(url + f'/{course_id}/assignments/{assign_id}/submissions/update_grades', json={
-    #     "grade_data": {
-    #         student_id: { "posted_grade": 100 } # {sid: {"posted_grade": 100} for sid in sids}
-    #     }
-    #     }, headers=HEADS).text)
-
+    requests.post(url + f'/{course_id}/assignments/{assign_id}/submissions/update_grades', json={
+        "grade_data": {
+            sid: { "posted_grade": 100 } for sid in sids}
+        }, headers=HEADS)
