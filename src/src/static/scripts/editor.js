@@ -135,16 +135,16 @@ async function create_edit_canvas(id, canvas, data) {
 
     let create_flow_between = make_create_flow_between_func(canvasInner, data.blocks, sync_block);
 
-    function check_block_onscreen_sync(id) {
+    function check_block_onscreen_sync(blockId) {
         return function (block_elem) {
-            console.log("syncing", id);
+            console.log("syncing", blockId);
 
             if (desiredToDeleteCurrentBlock) {
-                if(data.blocks[id]) block_elem.remove();
-                delete data.blocks[id];
+                if(data.blocks[blockId]) block_elem.remove();
+                delete data.blocks[blockId];
             }
 
-            sync_block(id);
+            sync_block(blockId);
         };
     }
 

@@ -51,8 +51,6 @@ def service_url(host, ctx, ticket, sig):
             get_redirect_javascript(host, ctx, ticket, sig)
         )
     )
-
-    print(injectedHTML)
     
     query_string = f"ctx={percent_encode(ctx)}&sig={percent_encode(sig)}"
     

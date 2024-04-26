@@ -49,3 +49,8 @@ class FlowInstanceState(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     flowchart = models.ForeignKey(Flowchart, on_delete=models.CASCADE)
     state = models.JSONField()
+
+class AttendanceDayPolyfillRecordings(models.Model):
+    instructor_access = models.ForeignKey(CanvasToken, on_delete=models.CASCADE)
+    recorded_at = models.DateTimeField()
+    status = models.CharField(max_length=10)

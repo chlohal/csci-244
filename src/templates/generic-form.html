@@ -1,0 +1,36 @@
+{% extends "base-form.html" %}
+
+{%block head %}
+
+<style>
+    label, form {
+        display: flex;
+        flex-direction: column;
+    }
+    form {
+        gap: 1em;
+    }
+    button {
+        display: inline-block;
+        width: max-content;
+    }
+</style>
+
+{% endblock %}
+
+{% block title %}{{title}}{% endblock %}
+
+{%block content%}
+<h2>{{title}}</h2>
+<form action="{{url}}" method="GET">
+    {% for question in questions %}
+      <label>{{question.question}}
+        <input name="{{question.id}}">
+      </label>
+      
+    {% endfor %}
+
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
