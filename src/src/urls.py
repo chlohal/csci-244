@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth.decorators import login_required
 
 from .views import SignUpView
 from . import views
@@ -24,7 +25,9 @@ from .api.all_api_routes import api_patterns
 
 urlpatterns = [
     path('', views.index, name='Index'),
-    path('edit/<id>', views.edit, name="Edit"),
+    path('edit/<id>', login_required(views.edit), name="Edit"),
+    path('create', login_required(views.create_flow_view), name="Create"),
+    path('my-flows', login_required(views.list_flows_view), name="My Flows"),
     path('admin/', admin.site.urls),
     path("accounts/signup/", SignUpView.as_view(), name="signup"),
     path("accounts/", include("django.contrib.auth.urls")),

@@ -5,7 +5,7 @@ async function main() {
 
     let canvas = document.getElementsByClassName("main-edit-canvas")[0];
 
-    const req = await fetch(`/api/bucket/${my_id}`);
+    const req = await fetch(`/api/flowcharts/${my_id}`);
     const data = (await req.json()) || {};
 
     let editCanvas = {};
@@ -102,14 +102,14 @@ async function create_edit_canvas(id, canvas, data) {
     canvas.appendChild(canvasInner);
 
     function sync_perspective() {
-        fetch(`/api/bucket/${id}/perspective`, {
+        fetch(`/api/flowcharts/${id}/perspective`, {
             method: "PATCH",
             body: JSON.stringify(data.perspective),
         });
     }
 
     function sync_block(block_id) {
-        fetch(`/api/bucket/${id}/blocks.${block_id}`, {
+        fetch(`/api/flowcharts/${id}/blocks.${block_id}`, {
             method: "PATCH",
             body: JSON.stringify(data.blocks[block_id]),
         });
@@ -189,7 +189,6 @@ function blockdef_to_block(blockdef, perspective) {
 }
 
 let ENSURING_CANVAS_LOGIN = null;
-let CANVAS_LOGGED_IN = false;
 function ensureCanvasLogin(cb) {
     if(CANVAS_LOGGED_IN) {
         return cb(true);
@@ -215,18 +214,35 @@ function ensureCanvasLogin(cb) {
     according to <a href="https://community.canvaslms.com/t5/Student-Guide/How-do-I-manage-API-access-tokens-as-a-student/ta-p/273">Canvas's official tutorial</a>
     </p>
     <p>Then, copy/paste your token into the box below.</p>
-    <input placeholder="Token"> <button>Confirm</button>
+    <input placeholder="Token" class="token">
+    <p>Please also enter your Canvas address. This is usually <code>https://canvas.youruniversity.edu</code></p>
+    <input placeholder="Canvas URL" class="url">
+    <button>Confirm</button>
     `;
 
-    let input = popup.querySelector("input");
+    let token_input = popup.querySelector("input.token");
+    let url_input = popup.querySelector("input.token");
     let button = popup.querySelector("button");
 
     button.addEventListener("click", () => {
-        let token = input.value;
-        document.body.removeChild(shadowbox);
-        CANVAS_LOGGED_IN = true;
-        ENSURING_CANVAS_LOGIN.forEach(x=>x(true));
-        ENSURING_CANVAS_LOGIN = null;
+        let token = token_input.value.trim();
+        let api_url = url_input.value.trim();
+
+        fetch("/api/integrate/canvas", {
+            method: "POST",
+            body: JSON.stringify({
+                token, api_url
+            })
+        }).then(x=> {
+            if(x.status == 201) {
+                document.body.removeChild(shadowbox);
+                CANVAS_LOGGED_IN = true;
+                ENSURING_CANVAS_LOGIN.forEach(x=>x(true));
+                ENSURING_CANVAS_LOGIN = null;
+            } else {
+                alert("Canvas token incorrect! Please ensure the token is correct and retry");
+            }
+        });
     })
 
     shadowbox.addEventListener("click", (e) => { 

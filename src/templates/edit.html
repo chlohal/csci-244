@@ -8,7 +8,9 @@
 
         <link rel="stylesheet" href="{% static 'styles/editor.css' %}">
 
+        <script>var CANVAS_LOGGED_IN = {{ canvas_token_exists }};</script>
         <script defer src="{% static 'scripts/editor.js' %}"></script>
+        
     </head>
     <body>
         <header></header>

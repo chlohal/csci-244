@@ -1,0 +1,31 @@
+{% extends "base-form.html" %}
+
+{% block title %}Create Flow{% endblock %}
+
+{%block content%}
+<h2>Create Flow</h2>
+<form id="creation-form">
+  {% csrf_token %}
+  <label>Name <input id="name" name="name"></label>
+  <button type="submit">Create</button>
+  <script>
+    let form = document.getElementById("creation-form");
+    let name = document.getElementById("name");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if(!name.value) {
+            return alert("Please give your flowchart a name!");
+        }
+        let f = await fetch("/api/flowcharts", {
+            method: "POST",
+            body: JSON.stringify(name.value)
+        });
+        if(f.status == 201) {
+            let j = await f.json();
+            window.location = `/edit/${j.id}`;
+        }
+    })
+  </script>
+</form>
+{% endblock %}
