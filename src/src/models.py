@@ -44,3 +44,8 @@ class QrCodeId(models.Model):
         unique_together = (
             ("flowchart", "block_in_flowchart_id")
         )
+
+class FlowInstanceState(models.Model):
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    flowchart = models.ForeignKey(Flowchart, on_delete=models.CASCADE)
+    state = models.JSONField()

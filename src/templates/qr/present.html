@@ -44,11 +44,11 @@
 </style>
 {%endblock%}
 
-{% block title %}My Flows{% endblock %}
+{% block title %}QR Code{% endblock %}
 
 {%block content%}
 <h2>QR Code</h2>
-<img src="/qr/render?data=http://localhost:8080/userflow/qr/${{qrcode}}">
+<img src="/qr/render?data=http://localhost:8080/userflow/qr/{{qrcode}}">
 <p>This QR code can be scanned by anyone to access your user flow.</p>
 <p>You can also <a href="/qr/render?data=http://localhost:8080/userflow/qr/${{qrcode}}" download>download the image for use in other programs</a>.</p>
 {% endblock %}

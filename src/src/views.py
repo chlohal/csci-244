@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 import os
 from json import dumps
+import qrcode
 
 from .models import CanvasToken, Flowchart
 
@@ -32,6 +33,11 @@ def present_qr_code(request, **kwargs):
     return render(request, "qr/present.html", {
         "qrcode": kwargs['qrcode']
     })
+
+def render_qr_code(request):
+    resp = HttpResponse(content_type="image/png")
+    qrcode.make(request.GET.get("data")).save(resp, "PNG")
+    return resp
 
 
 class SignUpView(CreateView):
