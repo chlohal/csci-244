@@ -137,11 +137,10 @@ async function create_edit_canvas(id, canvas, data) {
 
     function check_block_onscreen_sync(id) {
         return function (block_elem) {
-            let block = data.blocks[id];
-            if (!block) return;
+            console.log("syncing", id);
 
             if (desiredToDeleteCurrentBlock) {
-                block_elem.remove();
+                if(data.blocks[id]) block_elem.remove();
                 delete data.blocks[id];
             }
 
@@ -480,21 +479,25 @@ function init_block_content(block_info, content, sync_callback, create_flow_betw
 async function init_block_inner(block_info, content_elem, sync_callback) {
     const type = block_info.type;
 
+    const blocksLocalStorage = {
+        getItem: (item) => block_info.data[item],
+        setItem: (item,v) => {block_info.data[item] = v; sync_callback(); },
+        removeItem: (item) => { delete block_info.data[item]; sync_callback(); },
+    }
+
     if(BLOCK_INFO_MAP[type].init_content_function) {
-        BLOCK_INFO_MAP[type].init_content_function(block_info, content_elem)
+        BLOCK_INFO_MAP[type].init_content_function(blocksLocalStorage, block_info, content_elem)
     } else {
         const get_content_function = await fetch(`/static/scripts/block_edits/${type}.js`);
         if(get_content_function.status !== 200) return false;
 
-        const blocksLocalStorage = {
-            getItem: (item) => block_info.data[item],
-            setItem: (item,v) => {block_info.data[item] = v; sync_callback(); },
-            removeItem: (item) => { delete block_info.data[item]; sync_callback(); },
-        }
+        
         const AsyncFunction = (async function () {}).constructor;
         const content_function_source = await get_content_function.text();
         const func = new AsyncFunction("localStorage", "block_info", "content_elem", content_function_source);
         BLOCK_INFO_MAP[type].init_content_function = func;
+
+        console.log("this is content_elem", content_elem);
         func(blocksLocalStorage, block_info, content_elem);
     }
 }
@@ -615,7 +618,7 @@ function addDragging(element, cb, pos) {
 
     function mouseleave(e) {
         dragging = false;
-        callUpdateCallback()
+        callUpdateCallback();
     }
 
     function mousemove(e) {
@@ -642,7 +645,7 @@ function addDragging(element, cb, pos) {
         window.removeEventListener("mouseleave", mouseleave);
         window.removeEventListener("mousemove", mousemove);
 
-        callUpdateCallback()
+        callUpdateCallback();
     }
 
     (pos.control_elem || element).addEventListener("mousedown", (e) => {
