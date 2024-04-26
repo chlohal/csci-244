@@ -22,10 +22,12 @@ class QrCodeApiView(TemplateView):
             flowchart = Flowchart.objects.get(id=UUID(hex=body["flowchart_id"]))
 
 
-            id = QrCodeId.objects.get_or_create(
+            new_obj, created = QrCodeId.objects.get_or_create(
                 flowchart=flowchart,
                 block_in_flowchart_id=body["block_id"]
-            ).uuid
+            )
+
+            id = new_obj.uuid
 
             return JsonResponse(str(id), safe=False, status=201)
         except Exception as e:
