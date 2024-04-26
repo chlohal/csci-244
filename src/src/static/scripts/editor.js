@@ -177,6 +177,8 @@ async function create_edit_canvas(id, canvas, data) {
     return {
         addBlock: function (blockdef) {
             const block = blockdef_to_block(blockdef, data.perspective);
+            block.x = -(data.perspective.x|0) + 100;
+            block.y = -(data.perspective.y|0) + 100;
 
             create_onscreen_block(
                 block,
